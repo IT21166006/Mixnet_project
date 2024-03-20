@@ -4,39 +4,23 @@ const Schema = mongoose.Schema;
 
 const consultSchema = new Schema({
 
-    name :{
+    username :{
         type : String,
         required:true
     },
-    age : {
+    address : {
         type : Number, 
         required: true
     },
-    mobilenumber:{
+    age:{
         type : Number,
-        required: true
-    },
-    userName:{
-        type : String,
         required: true
     },
     email:{
         type : String,
         required: true
     },
-    password:{
-        type : String,
-        required: true
-    },
-    vehicleType:{
-        type : String,
-        required: true
-        
-    },
-    RePassword:{
-        type : String,
-        required: true
-    }
+    
 
 
 })
