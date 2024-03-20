@@ -1,49 +1,39 @@
-//conect mongo db
-const mongoose = require ("mongoose");
-//const { required } = require('nodemon/lib/config');
- 
+//connect mongo DB
+const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
-//creat stock schema
-const stockSchema = new Schema({
 
-    famer: {
-        type : String,
-        required : true
-    },
-    ItemName : {
-        type : String,
-        required : true
-
-    },
-    ItemId :{
-        type :String,
-        required : true
-    },
-
-    quantity : {
-        type : Number,
-        required : true
-    },
-    re_order_level : {
-        type : String
-    },
-    price: {
-        type :Number,
-        required : true
-    },
-    sdate :{
-
-        type : String,
-        required : true
-    },
-    sPrice :{
-
-        type : Number,
-        required : true
-    },
+//create emp schema
+const empSchema = new Schema(
+    {
     
-})
-//creat model to stock
-const stock = mongoose.model("stock",stockSchema);
-//eport module
-module.exports = stock;
+        //organization
+        org : {
+            type : String,
+            required : true
+        },
+        //phone
+        mobile : {
+            type : Number,
+            required : true
+        },
+
+        //address
+        address : {
+            type : String,
+            required : true
+        },
+
+        // about us
+        about : {
+            type : String,
+            required :true
+        },
+
+    }
+)
+//create model to bidding
+const employee = mongoose.model("employee",empSchema);
+
+//export module
+module.exports = employee;
