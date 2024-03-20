@@ -3,68 +3,48 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-//create bidding schema
-const biddingSchema = new Schema(
+//create business schema
+const businessSchema = new Schema(
     {
     
-        //bidding ID
-        bidID : {
+        //business Name
+        b_name : {
             type : String,
             required : true
         },
         //Item Name
-        itemName : {
+        email : {
             type : String,
             required : true
         },
 
-        //Quantity
-        quantity : {
-            type : Number,
+        //address
+        address : {
+            type : String,
             required : true
         },
 
-        // Minimum Bid Price
-        price : {
-            type : Number,
+        // business type
+        type : {
+            type : String,
             required :true
         },
 
-        setPrice : {
-            type : Number,
+        //discription
+        discription : {
+            type : String,
             required :true
         },
 
         //farmer Name
-        idNo : {
-            type : String,
-            required : true
-        },
-
-        //Farm Name
-        farm : {
-            type : String,
-            required : true
-        },
-
-        phone : {
-            type : Number,
-            required :true
-        },
-
-        cusName : {
-            type : String,
-            required :true
-        },
-
-        cusPhone : {
-            type : String,
-            required :true
-        }
+        //img : {
+        //    type : String,
+        //    required : true
+        //},
     }
 )
-//create model to bidding
-const bidding = mongoose.model("bidding",biddingSchema);
+//create model to bussiness
+const bussiness = mongoose.model("bussiness",businessSchema);
 
 //export module
-module.exports = bidding;
+module.exports = bussiness;
