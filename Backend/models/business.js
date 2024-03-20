@@ -18,13 +18,13 @@ const businessSchema = new Schema(
             required : true
         },
 
-        //Quantity
+        //address
         address : {
             type : String,
             required : true
         },
 
-        // business price
+        // business type
         type : {
             type : String,
             required :true
