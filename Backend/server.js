@@ -30,7 +30,7 @@ connection.once("open", () => {
 
 
 //Delevery Routes
-const consultantRouter = require("./routes/consultants.js");
+const consultantRouter = require("./routes/consultant.js");
 app.use("/consultant",consultantRouter);
 
 
