@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 const businessSchema = new Schema(
     {
     
-        //business ID
+        //business Name
         b_name : {
             type : String,
             required : true
