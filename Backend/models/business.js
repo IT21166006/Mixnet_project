@@ -43,7 +43,7 @@ const businessSchema = new Schema(
         //},
     }
 )
-//create model to bidding
+//create model to bussiness
 const bussiness = mongoose.model("bussiness",businessSchema);
 
 //export module
