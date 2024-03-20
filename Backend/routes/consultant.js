@@ -76,7 +76,7 @@ router.route("/delete/:id").delete(async(req,res) =>{
     let userID =req.params.id;
 
     await consultant.findByIdAndDelete(userID).then(() =>{
-        res.status(200).send({status: "consulatant deleted"});
+        res.status(200).send({status: "consultant deleted"});
     }).catch((err) =>{
         console.log(err.message);
         res.status(500).send({status: "Error with delete user",error:err.message});
