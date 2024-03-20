@@ -26,7 +26,7 @@ router.route("/add").post((req,res)=>{
     
     
     newConsultant.save().then(()=>{ 
-        res.json("consulatant Added")
+        res.json("consultant Added")
     }).catch((err)=>{
         console.log(err);
     })   
