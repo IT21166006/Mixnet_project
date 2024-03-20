@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //create bidding schema
-const biddingSchema = new Schema(
+const businessSchema = new Schema(
     {
     
-        //bidding ID
+        //business ID
         bidID : {
             type : String,
             required : true
@@ -64,7 +64,7 @@ const biddingSchema = new Schema(
     }
 )
 //create model to bidding
-const bidding = mongoose.model("bidding",biddingSchema);
+const bussiness = mongoose.model("bussiness",businessSchema);
 
 //export module
-module.exports = bidding;
+module.exports = bussiness;
