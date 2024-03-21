@@ -4,7 +4,7 @@ let consultant = require("../models/consultant")
 
 
 //crud -> create method
-//http://localhost:8070/person/add
+//http://localhost:8070/Consultant/add
 router.route("/add").post((req,res)=>{
 
     const username = req.body.username;
