@@ -35,7 +35,7 @@ router.route("/add").post((req,res)=>{
 
 
 
-//http://localhost:8070/person/display
+//http://localhost:8070/consultant/display
 router.route("/display").get((req,res)=>{
 
     consultant.find().then((consultant)=>{  
