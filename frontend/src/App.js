@@ -91,15 +91,6 @@ function App() {
             <Route path = '/bidstore' exact element = {<BidStore/>}></Route>
 
 
-            {/* Employee Managmen System */}
-            <Route path='/AddStock' element={<AddStock/>} />
-            <Route path='/StockDashboard' element={<StockDashboard/>} />
-            <Route path='/EditStock/:id' element={<EditStock/>} />
-            <Route path='/StockManageItems' element={<ManageItems/>} />
-            <Route path='/Stockreport' element={<Stockreport/>} />
-            <Route path='/InStock' element={<InStock/>} />
-
-
 
             {/* Consaltant Managment System */}
             <Route path = '/deldashboard' exact element = {<DelDashboard/>} ></Route>
