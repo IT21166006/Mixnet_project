@@ -9,7 +9,7 @@ const consultantSchema = new Schema({
         required:true
     },
     address : {
-        type : Number, 
+        type : String, 
         required: true
     },
     age:{
