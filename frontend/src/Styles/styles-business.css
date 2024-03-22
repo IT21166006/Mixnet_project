@@ -1,5 +1,30 @@
+/*create business profile*/
 .business-side-bar
 {
     background-color: #6700B8;
     height: 1000px;
+}
+
+.business-img-align
+{
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    color: aliceblue;
+    font-size: 110px;
+    font-weight: 700;
+}
+
+.business-img-size
+{
+    margin-top: 100px;
+    width: 200px;
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.business-col-bg
+{
+    background-color: #6700B8;
+    height: 643px;
 }
