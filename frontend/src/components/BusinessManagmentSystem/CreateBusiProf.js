@@ -1,6 +1,8 @@
 //import react
 import React,{useState,useEffect} from "react";
 import {Link,useNavigate,useParams} from "react-router-dom";
+import MixNet from "./MixNet.png";
+
 //import axios
 import axios from "axios"; 
 
@@ -92,6 +94,7 @@ export default function CreateBusiProf(){
         <div className="container">
             <div className="row">
                 <div className="col-md-6 business-side-bar">
+                    <a><img src={MixNet}></img></a>
                 </div>
                 <div className="col-md-6">
                     <h1>CREATE BUSINESS PROFILE</h1>
