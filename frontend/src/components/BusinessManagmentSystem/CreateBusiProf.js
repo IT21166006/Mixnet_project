@@ -91,17 +91,17 @@ export default function CreateBusiProf(){
     //   };
     
     return(
-        <div className="container">
+        <div className="container business-con">
             <div className="row">
                 <div className="col-md-6 business-side-bar business-img-align business-col-bg">
                     <a><img className="business-img-size" src={MixNet}></img></a><br></br>
                     <h1 className="business-img-align">MixNet</h1>
                 </div>
                 <div className="col-md-6 business-col-bg-content">
-                    <br></br>
-                    <h1>CREATE BUSINESS PROFILE</h1><br></br>
-                    <h4>It's quick and essy</h4><br></br>
-                    <hr></hr>
+                    <br></br><br></br> <br></br>
+                    <h4>CREATE BUSINESS PROFILE</h4>
+                    <h5>It's quick and essy</h5>
+                    <hr className="hr"></hr>
                     <div className="business-form-box">
                         <form onSubmit={sendData}>
 
