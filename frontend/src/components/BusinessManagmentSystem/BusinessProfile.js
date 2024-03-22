@@ -5,19 +5,13 @@ import {Link,useNavigate,useParams} from "react-router-dom";
 import axios from "axios"; 
 
 //export function create bid
-export default function BidStore(){
-    
-    const {id} = useParams();
-
-    const navigate = useNavigate()
-
-    const [bids , setbids] = useState([]);
+export default function BusinessProfile(){
   
     
     // Fetch data
-    function getBids() {
+    function getProfile() {
       axios
-        .get("http://localhost:8070/bidding/store")
+        .get("http://localhost:8070/bussiness/store")
         .then((res) => {
           setbids(res.data);
         
