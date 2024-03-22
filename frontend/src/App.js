@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 
 //Bussiness Managment System
-import CreateBids from './components/BusinessManagmentSystem/CreateBusiProf';
+import CreateBusinessProfile from './components/BusinessManagmentSystem/CreateBusiProf';
 import BiddingDetailsFarmer from './components/BusinessManagmentSystem/BiddingDetailsFarmer';
 import SetPrice from './components/BusinessManagmentSystem/SetPrice';
 import BidReport from './components/BusinessManagmentSystem/BidReport';
@@ -23,7 +23,7 @@ function App() {
           <Routes>
 
             {/* Bussiness Managment System */}
-            <Route path = '/createbid/:idNo' exact element = {<CreateBids/>}></Route>
+            <Route path = '/createprofile' exact element = {<CreateBusinessProfile/>}></Route>
             <Route path = '/biddetails' exact element = {<BiddingDetailsFarmer/>}></Route>
             <Route path = '/setpricebid/:bidID' exact element = {<SetPrice/>}></Route>
             <Route path = '/selectedbid/:id' exact element = {<SelectedBid/>}></Route>
