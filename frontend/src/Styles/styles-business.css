@@ -28,3 +28,47 @@
     background-color: #6700B8;
     height: 643px;
 }
+
+.business-col-bg-content
+{
+    background-color: #ffffff;
+    height: 643px;
+    text-align: center;
+}
+
+/* .business-form-box
+{
+    background-color: #d3b3ec;
+    border-radius: 20px;
+} */
+
+.business-prof-input
+{
+    width: 400px;
+    background-color: #D9D9D9;
+    border: none;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.business-prof-button
+{
+    width: 400px;
+    background-color: #6700B8;
+    color: aliceblue;
+    border: none;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500px;
+}
+
+hr
+{
+   font-weight: 25pc;
+    
+}

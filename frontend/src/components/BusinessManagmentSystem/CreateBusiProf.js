@@ -97,42 +97,45 @@ export default function CreateBusiProf(){
                     <a><img className="business-img-size" src={MixNet}></img></a><br></br>
                     <h1 className="business-img-align">MixNet</h1>
                 </div>
-                <div className="col-md-6 ">
-                    <h1>CREATE BUSINESS PROFILE</h1>
-                    <h4>It's quick and essy</h4>
-                    <div></div>
-                    <form onSubmit={sendData}>
-                        
-                        <input type="text" placeholder="Business Name"
-                        onChange={(e)=>{
-                            setbname(e.target.value);
-                        }}
-                        ></input><br></br>
+                <div className="col-md-6 business-col-bg-content">
+                    <br></br>
+                    <h1>CREATE BUSINESS PROFILE</h1><br></br>
+                    <h4>It's quick and essy</h4><br></br>
+                    <hr></hr>
+                    <div className="business-form-box">
+                        <form onSubmit={sendData}>
 
-                        <input type="email" placeholder="Email (Current Personal Account)"
-                        onChange={(e)=>{
-                            setemail(e.target.value);
-                        }}
-                        ></input><br></br>
+                            <input className="business-prof-input" type="text" placeholder="Business Name"
+                            onChange={(e)=>{
+                                setbname(e.target.value);
+                            }}
+                            ></input><br></br>
 
-                        <input type="text" placeholder="Address"
-                        onChange={(e)=>{
-                            setaddress(e.target.value);
-                        }}
-                        ></input><br></br>
+                            <input className="business-prof-input" type="email" placeholder="Email (Current Personal Account)"
+                            onChange={(e)=>{
+                                setemail(e.target.value);
+                            }}
+                            ></input><br></br>
 
-                        <input type="text" placeholder="Business Type"
-                        onChange={(e)=>{
-                            settype(e.target.value);
-                        }}></input><br></br>
+                            <input className="business-prof-input" type="text" placeholder="Address"
+                            onChange={(e)=>{
+                                setaddress(e.target.value);
+                            }}
+                            ></input><br></br>
 
-                        <input type="text" placeholder="Discripton"
-                        onChange={(e)=>{
-                            setdiscription(e.target.value);
-                        }}></input><br></br>
+                            <input className="business-prof-input" type="text" placeholder="Business Type"
+                            onChange={(e)=>{
+                                settype(e.target.value);
+                            }}></input><br></br>
 
-                        <button>CREATE ACCOUNT</button>
-                    </form>
+                            <input className="business-prof-input" type="text" placeholder="Discripton"
+                            onChange={(e)=>{
+                                setdiscription(e.target.value);
+                            }}></input><br></br>
+
+                            <button className="business-prof-button">CREATE ACCOUNT</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
