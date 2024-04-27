@@ -1,44 +1,38 @@
 const router = require("express").Router();
-let Business = require("../models/business");
+const Business = require("../models/business");
 
+//----route of data insert(Business)----done
+router.route("/create").post((req, res) => {
+    const { bname, email, address, type, discription } = req.body;
 
-//----route of data insert(Bussiness)----done
-router.route("/create").post((req,res)=>
-{
-    const business_name  = req.body.b_name;
-    const email = Number(req.body.email);
-    const address =  Number(req.body.address);
-    const type = req.body.type;
-    const discription =(req.body.discription);
-    
+    const newBusiness = new Business({
+        bname,
+        email,
+        address,
+        type,
+        discription
+    });
 
-    const newBusiness = new Business( 
-        {
-            business_name,
-            email,
-            address,
-            type,
-            discription
-        }
-    )
-
-    newBusiness.save().then(()=>
-    {
-            res.json("Bid Added")
+    newBusiness.save()
+        .then(() => {
+            res.json("Business Added");
         })
-    .catch((err)=>{
-        console.log(err);  
-    })
-})
-
+        .catch(err => {
+            console.log(err);
+            res.status(400).json("Error: " + err);
+        });
+});
 
 //----route of read data(for Bidding Store)----done
-router.route("/fetch.own.details").get((req,res)=>{
-    Bidding.find().then((bidding)=>{
-        res.json(bidding)
-    })
-}).patch((err)=>{
-    console.log(err)
-})
+router.route("/fetch/own/details").get((req, res) => {
+    Business.find()
+        .then(businesses => {
+            res.json(businesses);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json("Error: " + err);
+        });
+});
 
 module.exports = router;

@@ -8,7 +8,7 @@ const businessSchema = new Schema(
     {
     
         //business Name
-        b_name : {
+        bname : {
             type : String,
             required : true
         },
