@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 //creat stock schema
 const stockSchema = new Schema({
 
-    famer: {
+    employee: {
         type : String,
         required : true
     },
