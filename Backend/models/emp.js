@@ -3,10 +3,10 @@ const mongoose = require ("mongoose");
 //const { required } = require('nodemon/lib/config');
  
 const Schema = mongoose.Schema;
-//creat stock schema
-const stockSchema = new Schema({
+//creat employee schema
+const employeeSchema = new Schema({
 
-    employee: {
+    famer: {
         type : String,
         required : true
     },
@@ -43,7 +43,7 @@ const stockSchema = new Schema({
     },
     
 })
-//creat model to stock
-const stock = mongoose.model("stock",stockSchema);
+//creat model to employee
+const employee = mongoose.model("employee",employeeSchema);
 //eport module
-module.exports = stock;
+module.exports = employee;

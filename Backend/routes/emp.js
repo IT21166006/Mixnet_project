@@ -1,31 +1,31 @@
 const router = require("express").Router();
-const Stock = require("../models/stock");
+const Employee = require("../models/employee");
 
 
 //add item
 router.route("/add").post((req,res)=>{
-    const famer  =req.body.famer;
-    const ItemName = req.body.ItemName;
-    const ItemId = req.body.ItemId;
+    const firstname  =req.body.firstname;
+    const LastName = req.body.LastName;
+    const SureName = req.body.SureName;
     const quantity = Number( req.body.quantity);
     const re_order_level = req.body.re_order_level;
     const price =Number(req.body.price);
     const sPrice =Number(req.body.sPrice);
     const sdate = req.body.sdate;
 
-    const newstock = new Stock({
+    const newemployee = new Employee({
 
-        famer,
-        ItemName,
-        ItemId,
+        firstname,
+        LastName,
+        SureName,
         quantity,
         re_order_level,
         price,
         sPrice,
         sdate
  })
-     newstock.save().then(() => {
-        res.json("stock added")
+     newemployee.save().then(() => {
+        res.json("employee added")
 }).catch ((err)=>{
     console.log(err);
 })
@@ -35,8 +35,8 @@ router.route("/add").post((req,res)=>{
 //read
 router.route ("/").get((req,res) => {
 
-    Stock.find().then((stock) => {   
-        res.json(stock) 
+    Employee.find().then((employee) => {   
+        res.json(employee) 
 
     }).catch((err) => {
         console.log(err)
@@ -46,13 +46,13 @@ router.route ("/").get((req,res) => {
 //update
 router.route ("/update/:id").put(async (req,res) => {
    let userId  = req.params.id;
-   const {famer,ItemName,ItemId,quantity,re_order_level,price,sPrice,sdate} = req.body;
+   const {firstname,LastName,SureName,quantity,re_order_level,price,sPrice,sdate} = req.body;
 //user id must change
-  const UpdateStock = {
+  const UpdateEmployee = {
 
-    famer,
-    ItemName,
-    ItemId,
+    firstname,
+    LastName,
+    SureName,
     quantity,
     re_order_level,
     price,
@@ -61,10 +61,10 @@ router.route ("/update/:id").put(async (req,res) => {
 
 
   }
-  const update = await Stock.findByIdAndUpdate(userId,UpdateStock)
+  const update = await Employee.findByIdAndUpdate(userId,UpdateEmployee)
   .then(()=>{
    
-  res.status(200).send ({status:"stock updated"})
+  res.status(200).send ({status:"employee updated"})
 
   }).catch(()=>{
     console.log(err);
@@ -77,22 +77,22 @@ router.route("/delete/:id").delete(async(req,res)=>{
  let userId = req.params.id;
  
  
- await Stock.findByIdAndDelete(userId)
+ await Employee.findByIdAndDelete(userId)
  .then(()=>{
 
-    res.status(200).send({status:"stock deleted"});
+    res.status(200).send({status:"employee deleted"});
  }).catch ((err)=>{
     console.log(err.massage);
-    res.status(500).send({status:"error with deleting stocks",error:err.massage});
+    res.status(500).send({status:"error with deleting employees",error:err.massage});
  })
 })
 
 router.route("/get/:id").get(async(req,res)=>{
-  let stockid =req.params.id;
-  console.log(stockid)
-  // const user = await stock.findbyId(stockid)
+  let employeeid =req.params.id;
+  console.log(employeeid)
+  // const user = await employee.findbyId(employeeid)
 
-  const stock = await Stock.findById(stockid)
+  const employee = await Employee.findById(employeeid)
   .then((ob)=>{
     res.json({data:ob})
   })
@@ -112,9 +112,9 @@ router.route("/get/:id").get(async(req,res)=>{
   router.get('/search/:searchInput', async (req, res) => {
     try {
       const { searchInput } = req.params;
-      const users = await Stock.find({
+      const users = await Employee.find({
         $or: [
-          { famer: { $regex: searchInput, $options: 'i' } },
+          { firstname: { $regex: searchInput, $options: 'i' } },
           
         
           
