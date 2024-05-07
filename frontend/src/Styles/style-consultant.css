@@ -1,1 +1,253 @@
 /*type code here*/
+
+.reg-side-bar{
+  background-color: #00B833;
+  
+  
+}
+
+.mixnetlogo{
+  width: 200px;
+  margin-left: 170px;
+  margin-top: 160px;
+}  
+
+.logoName{
+  font-size: 110px;
+  font-weight: 600;
+  color: aliceblue;
+  text-align: center;
+
+}
+  
+  .form-con {
+    
+    margin-top: 22px;
+    background-color: #D9D9D9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-right: 30px;
+    border-radius: 15px;
+    width: 500px;
+    margin-bottom: 60px;
+    
+    
+    
+  }
+  
+  .registerTopic-con{
+    font-size: 22px;
+    font-weight: 700;
+    
+  }
+
+  .subTopic-con{
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+
+  .hrLine-con{
+    margin: 5px;
+    margin-bottom: 20px;
+  }
+
+  .form-group-con {
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .label-con {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    width: 180px;
+  }
+  
+  .input-con {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .button-group-con {
+    text-align: center;
+  }
+  
+  .Regbutton-con {
+    background-color: #00B833;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 190px;
+    height: auto;
+  }
+  
+  .Regbutton-con:hover {
+    background-color: #08a836;
+  }
+  
+
+  /*Image Upload       part*/
+  .image-upload-container {
+    padding: 2rem;
+    display: flex;
+    
+    height: 10vh;
+}
+
+.box-decoration {
+    
+
+    
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.image-upload-label {
+    font-size: 14px;
+    font-weight:700;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    margin-left: -30px;
+}
+
+.image-upload-input {
+    display: none;
+}
+
+.image-upload-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    
+    
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-upload-button:hover {
+    background-color: #3e8e41;
+}
+
+.img-display-before {
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.img-display-after {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+.chooseImage-con{
+   font-size: 14px;
+   font-weight: 500;
+}
+
+/* Side Bar css */
+.w3-sidebar-con {
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    padding-top: 50px;
+  }
+  
+  .sideBar-con {
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    
+  }
+  
+  .sideBar-con:hover {
+    background-color: #ddd;
+  }
+  
+  /* profile view css */
+  .content-con {
+    margin-left: 25%;
+    padding: 16px;
+    
+  }
+  
+  .w3-container-con {
+    padding: 0.01em 16px;
+    margin-top: 10px;
+    background-color: aqua;
+    width: 95%;
+    height: 500px;
+    border-radius: 13px;
+    display: flex;
+  }
+
+.ProfileLeft-con{
+    flex:2;
+    
+}
+
+.Profpic-con{
+    margin-top: 30px;
+    margin-left: 80px;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px ;
+}
+
+.ProfName-con{
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 90px;
+    margin-top: -10px;
+    
+}
+
+.ProfAddress-con{
+    margin-left: 90px;
+    font-size: 16px;
+    font-weight: 440;
+}
+
+.ProfileRight-con{
+    flex:2;
+}
+
+.profDetailBox-con{
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    height: auto;
+    width: 400px;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.profDetailTopic-con{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profDetail-con{
+    font-size: 15px;
+
+}
+

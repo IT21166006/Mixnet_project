@@ -1,54 +1,38 @@
 import { Route, Routes } from 'react-router-dom';
 
-
+import { useHistory } from 'react-router-dom';
 
 //Consultant Managment System
-import DelDashboard from './components/DeliveryManagementSystem/DelDashboard';
-import Register from './components/DeliveryManagementSystem/Register';
-import DeliveryProfile from './components/DeliveryManagementSystem/DeliveryProfile';
-import Allorders from './components/DeliveryManagementSystem/Allorders';
-import AddAppointment from './components/DeliveryManagementSystem/AddAppointment';
-import DeliveryLogin from './components/DeliveryManagementSystem/DeliveryLogin';
-import Edit from './components/DeliveryManagementSystem/Edit';
-import Genreport from'./components/DeliveryManagementSystem/Reportgen';
+import ConsultantRegister from './components/ConsultantManagementSystem/ConsultantRegister';
+import EditProfile from './components/ConsultantManagementSystem/EditProfile';
+import ProfileView from './components/ConsultantManagementSystem/ProfileView';
+import AnalyticsDashboard from './components/ConsultantManagementSystem/AnalyticsDashboard';
+
+import DeliveryLogin from './components/ConsultantManagementSystem/DeliveryLogin';
 
 
 
-
+//CSS for Main Systems
 import './Styles/style-consultant.css';
+import AddQualifications from './components/ConsultantManagementSystem/AddQualifications';
+
 
 //
 function App() {
   return (
     <div className="App">
-      <Header/>
-      
 
           <Routes>
 
-            
-
-
-
-           
-
-
-
-            {/* Consaltant Managment System */}
-            <Route path = '/deldashboard' exact element = {<DelDashboard/>} ></Route>
-            <Route path = '/Delregister' exact element = {<Register/>} ></Route>
-            <Route path = '/profile/:id' exact element = {<DeliveryProfile/>}></Route>
-            <Route path = '/editnow/:id' exact element = {<Edit/>}></Route>
-            <Route path = '/order' exact element = {<Allorders/>}></Route>
-            <Route path = '/deladd' exact element = {<AddAppointment/>}></Route>
+            {/* Delevery Managment System */}
+            <Route path = '/consultReg' exact element = {<ConsultantRegister/>} ></Route>
+            <Route path = '/editProfile' exact element = {<EditProfile/>} ></Route>
+            <Route path = '/consultprofile' exact element = {<ProfileView/>}></Route>
+            <Route path = '/analytics' exact element = {<AnalyticsDashboard/>}></Route>
             <Route path = '/dellogin' exact element = {<DeliveryLogin/>}></Route>
-            <Route path = '/delreport' exact element = {<Genreport/>}></Route>
-
-
-            
+            <Route path = '/addOthers' exact element = {<AddQualifications/>}></Route>
             
           </Routes>
-          <Footer/>
     
     </div>
   );

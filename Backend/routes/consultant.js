@@ -29,6 +29,7 @@ router.route("/add").post((req,res)=>{
         res.json("consultant Added")
     }).catch((err)=>{
         console.log(err);
+        res.json("error")
     })   
 
 })
