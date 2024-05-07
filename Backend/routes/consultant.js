@@ -36,7 +36,7 @@ router.route("/add").post((req,res)=>{
 
 
 
-//http://localhost:8070/consultant/display
+//fetch all
 router.route("/display").get((req,res)=>{
 
     consultant.find().then((consultant)=>{  
@@ -45,6 +45,18 @@ router.route("/display").get((req,res)=>{
         console.log(err)
     }) 
 
+})
+
+//fetch by id
+router.route("/profile/:email").get(async(req,res)=>{
+    let ID = req.params.email;
+
+    const consultant = await consultant.findById(ID)
+    .then((consultant)=>{
+        res.json(consultant)
+    })
+}).patch((err)=>{
+    console.log(err)
 })
 
 //update

@@ -29,7 +29,6 @@ export default function ConsultantRegister(){
 
   axios.post("http://localhost:8070/consultant/add",newConsultant).then(()=>{
     alert("Consultant Added ✅");
-    navigate('/consultprofile')
   })
   .catch((err)=>{
     alert("something went wrong")
