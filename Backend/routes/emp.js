@@ -7,8 +7,8 @@ router.route("/add").post((req,res)=>{
     const firstname  =req.body.firstname;
     const LastName = req.body.LastName;
     const SureName = req.body.SureName;
-    const quantity = Number( req.body.quantity);
-    const re_order_level = req.body.re_order_level;
+    const aboutme = req.body.aboutme; 
+    const number = req.body.number;
     const price =Number(req.body.price);
     const sPrice =Number(req.body.sPrice);
     const sdate = req.body.sdate;
@@ -18,8 +18,8 @@ router.route("/add").post((req,res)=>{
         firstname,
         LastName,
         SureName,
-        quantity,
-        re_order_level,
+        aboutme,
+        number,
         price,
         sPrice,
         sdate
@@ -46,15 +46,15 @@ router.route ("/").get((req,res) => {
 //update
 router.route ("/update/:id").put(async (req,res) => {
    let userId  = req.params.id;
-   const {firstname,LastName,SureName,quantity,re_order_level,price,sPrice,sdate} = req.body;
+   const {firstname,LastName,SureName,aboutme,number,price,sPrice,sdate} = req.body;
 //user id must change
   const UpdateEmployee = {
 
     firstname,
     LastName,
     SureName,
-    quantity,
-    re_order_level,
+    aboutme,
+    number,
     price,
     sPrice,
     sdate
