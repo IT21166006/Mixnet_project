@@ -17,6 +17,7 @@ import './Styles/style-consultant.css';
 import AddQualifications from './components/ConsultantManagementSystem/AddQualifications';
 
 
+
 //
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path = '/analytics' exact element = {<AnalyticsDashboard/>}></Route>
             <Route path = '/dellogin' exact element = {<DeliveryLogin/>}></Route>
             <Route path = '/addOthers' exact element = {<AddQualifications/>}></Route>
+            
             
           </Routes>
     

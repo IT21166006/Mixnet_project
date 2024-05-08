@@ -29,53 +29,14 @@ export default function ConsultantRegister(){
 
   axios.post("http://localhost:8070/consultant/add",newConsultant).then(()=>{
     alert("Consultant Added ✅");
+    navigate('/consultprofile')
   })
   .catch((err)=>{
     alert("something went wrong")
   })
   };
 
-  // //delete
-  //   function deletedata(i) {
-  //       if (window.confirm('Do you want to delete "' + i.itemName + '"')) {
-  //         axios
-  //           .delete("http://localhost:8070/bidding/delete/" + i._id)
-  //           .then(() => {
-  //             getBids();
-  //           })
-  //           .catch((err) => {
-  //             alert(err);
-  //           });
-  //       }
-  //     }
-
-
-//   //update
-
-    //   const handleChange = (e) => {
-    //     setbidedit({
-    //       ...setbidedit,
-    //       [e.target.name]: e.target.value
-    //     });
-    //   };
-
-
-    // // Fetch data
-    // function getBids() {
-    //   axios
-    //     .get("http://localhost:8070/bidding/select_own/"+idNo)
-    //     .then((res) => {
-    //     setbids(res.data);
-        
-    //     })
-    //     .catch((err) => {
-    //       alert(err.message);
-    //     });
-    // }
   
-    // useEffect(() => {
-    //   getBids();
-    // }, []);
 
 
 

@@ -1,75 +1,49 @@
-import React from 'react';
-import ProfileSidebar from '../Sidebar/ProfileSidebar';
-import Fab from '@mui/material/Fab';
-import EditIcon from '@mui/icons-material/Edit';
-import { useNavigate, Link } from "react-router-dom";
+// Import necessary modules
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-import ProfileImg from "./profile.jpeg";
-
+// Functional component ProfileView
 const ProfileView = () => {
+  // State variables to store consultant data
+  const [consultant, setConsultant] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  const navigate = useNavigate()
+  // Fetch consultant data from backend upon component mounting
+  useEffect(() => {
+    // Fetch consultant data from backend
+    axios.get("http://localhost:8070/consultant/display")
+      .then((response) => {
+        // Set consultant data to state
+        setConsultant(response.data);
+        // Set loading to false to indicate data loading complete
+        setLoading(false);
+      })
+      .catch((error) => {
+        // Log any errors
+        console.error("Error fetching consultant data: ", error);
+        // Set loading to false to indicate data loading complete, even if it failed
+        setLoading(false);
+      });
+  }, []);
 
+  // Render loading indicator if data is still loading
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Render consultant profile data
   return (
     <div>
-      <ProfileSidebar/>
-
-      <div className="content-con">
-        <div className="w3-container-con w3-teal">
-            <div className="ProfileLeft-con">
-              <div className="imgAndIcon"><img src={ProfileImg} alt="Your Picture" className="Profpic-con" />
-              {/* new part */}
-                <div className="editIcon-con">
-                  <Fab
-                    color="secondary"
-                    aria-label="edit"
-                    sx={{ marginLeft: '290px', marginTop:'-100px', width: '50px', height: '50px'}} // Adjust the margin value as needed
-                  >
-                    <Link to={'/EditProfile'}><EditIcon style={{ width: '25px', height: '28px', color:'white'}} /></Link>
-                  </Fab>
-                
-                </div>
-              </div>
-              
-              <div className="ProfName-con">Shikhar Dhawan</div>
-              <div className="ProfAddress-con">Los Angeles in California</div>
-            </div>
-
-            <div className="ProfileRight-con">
-              <div className="profDetailBox-con">
-                <div className="profDetailTopic-con">Area of Advertising</div>
-                <div className="profDetail-con">Content Marketing</div>
-                <div className="profDetailTopic-con">Years Of Experiance</div>
-                <div className="profDetail-con">6 years</div>
-              </div>
-
-              <div className="profDetailBox-con">
-                <div className="profDetailTopic-con">Area of Advertising</div>
-                <div className="profDetail-con">Content Marketing</div>
-              </div>
-
-              <div className="profDetailBox-con">
-                <div className="profDetailTopic-con">Area of Advertising</div>
-                <div className="profDetail-con">Content Marketing</div>
-              </div>
-
-              <div className="profDetailBox-con">
-                <div className="profDetailTopic-con">Area of Advertising</div>
-                <div className="profDetail-con">Content Marketing</div>
-              </div>
-
-              
-
-              
-            </div>
-      
-
-          
-        </div>
-      </div>
-
+      <h1>Consultant Profile</h1>
+      <ul>
+        <li>Username: {consultant.username}</li>
+        <li>Address: {consultant.address}</li>
+        <li>Age: {consultant.age}</li>
+        <li>Email: {consultant.email}</li>
+      </ul>
     </div>
   );
 };
 
+// Export ProfileView component
 export default ProfileView;
