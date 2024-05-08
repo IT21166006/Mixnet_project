@@ -6,39 +6,56 @@ const Schema = mongoose.Schema;
 //creat employee schema
 const employeeSchema = new Schema({
 
-    famer: {
+    firstname: {
         type : String,
         required : true
     },
-    ItemName : {
+    LastName : {
         type : String,
         required : true
 
     },
-    ItemId :{
+    SureName :{
         type :String,
         required : true
     },
 
-    quantity : {
+    aboutme : {
         type : Number,
         required : true
     },
-    re_order_level : {
-        type : String
-    },
-    price: {
-        type :Number,
+    number : {
+        type : Number,
         required : true
     },
-    sdate :{
+    email: {
+        type :String,
+        required : true
+    },
+    Education :{
 
         type : String,
         required : true
     },
-    sPrice :{
+    Cetification :{
 
-        type : Number,
+        type : String,
+        required : true
+    },
+    Skills :{
+
+        type : String,
+        required : true
+    },
+
+    companyName :{
+
+        type : String,
+        required : true
+    },
+    companyName :{
+
+        type : String,
         required : true
     },
     
