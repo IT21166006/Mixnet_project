@@ -118,9 +118,12 @@ export default function ConsultantRegister(){
           
           
           <div className="button-group-con">
-            <button className="Regbutton-con" >
+             <button className="Regbutton-con" >
               Create Profile
-            </button>
+            </button> 
+
+            
+
           </div>
 
         </form>

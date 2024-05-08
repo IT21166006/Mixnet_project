@@ -1,49 +1,95 @@
-// Import necessary modules
-import React, { useState, useEffect } from "react";
+
+
+import React from 'react';
+import ProfileSidebar from '../Sidebar/ProfileSidebar';
+import { useNavigate, Link,useParams } from "react-router-dom";
 import axios from "axios";
 
-// Functional component ProfileView
-const ProfileView = () => {
-  // State variables to store consultant data
-  const [consultant, setConsultant] = useState({});
-  const [loading, setLoading] = useState(true);
 
-  // Fetch consultant data from backend upon component mounting
-  useEffect(() => {
-    // Fetch consultant data from backend
-    axios.get("http://localhost:8070/consultant/display")
-      .then((response) => {
-        // Set consultant data to state
-        setConsultant(response.data);
-        // Set loading to false to indicate data loading complete
-        setLoading(false);
-      })
-      .catch((error) => {
-        // Log any errors
-        console.error("Error fetching consultant data: ", error);
-        // Set loading to false to indicate data loading complete, even if it failed
-        setLoading(false);
-      });
-  }, []);
+export default function ProfileView(){
+  const navigate = useNavigate();
+  const {id} = useParams();
+  const [consultantDetails, setconsultantDetails] = React.useState({
+      username: "",
+      address: "",
+      age: "",
+      email: ""
+  });
+  
 
-  // Render loading indicator if data is still loading
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  React.useEffect(() => {
+      function fetchAllData(){
+          axios.get('http://localhost:8070/consultant/get/'+id)
+          .then((res) => {
+              setconsultantDetails(res.data.consultant)
+              console.log(res.data.consultant)
+          }).catch((err) => {
+              console.log(err);
+          });
+      }
+      fetchAllData();
+  }, [])
 
-  // Render consultant profile data
-  return (
-    <div>
-      <h1>Consultant Profile</h1>
-      <ul>
-        <li>Username: {consultant.username}</li>
-        <li>Address: {consultant.address}</li>
-        <li>Age: {consultant.age}</li>
-        <li>Email: {consultant.email}</li>
-      </ul>
-    </div>
+  //delete
+  // function deleteperson(id){
+  //     axios.delete('http://localhost:8070/person/delete/' +id)
+  //     .then(()=>{
+  //         alert("Person Deleted.");
+  //         navigate('/');
+  //     }).catch((err)=>{
+  //         console.log(err)
+  //     })
+  // }
+
+
+  return(
+      <div>
+          <div className="container">
+      <div className="Del-profile-title"><h1>Delivery Profile</h1></div></div>
+      <br></br>
+      <div className="container">
+      <div className="Del-profile-Box">
+      <form className="row ">
+                          <div className="col-md-6">
+                              <table>
+                                  <tbody>
+                                      <div className="form-group">
+                                          <tr>
+                                              <td class="">Name : </td>
+                                              <td>{consultantDetails.username}</td>
+                                          </tr>
+                                      </div>
+                                      <div className="form-group">
+                                          <tr>
+                                              <td class="">Age : </td>
+                                              <td>{consultantDetails.address}</td>
+                                          </tr>
+                                      </div> 
+                                      <div className="form-group">
+                                          <tr>
+                                              <td class="f-name">Mobile Number : </td>
+                                              <td>{consultantDetails.age}</td>
+                                          </tr>
+                                      </div> 
+                                      <div className="form-group">
+                                          <tr>
+                                              <td class="">vehicleType : </td>
+                                              <td>{consultantDetails.email}</td>
+                                          </tr>
+                                      </div>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <button type="button" className="Del-btn-profEdt" onClick={()=>navigate(`/editnow/${consultantDetails._id}`)} >Edit</button>
+                          
+                      </form>
+      </div>
+      </div>
+
+      
+</div>
+ 
+
+
   );
-};
-
-// Export ProfileView component
-export default ProfileView;
+}
