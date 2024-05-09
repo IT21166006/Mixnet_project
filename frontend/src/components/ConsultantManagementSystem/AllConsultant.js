@@ -18,8 +18,9 @@ export default function AllConsultant() {
 
   return (
     <div>
-        <table>
-          <thead>
+        <div className="container">
+        <table className="table Del-table">
+          <thead className="thead-dark">
             <tr>
               <th>UserName</th>
               <th>Email</th>
@@ -29,15 +30,16 @@ export default function AllConsultant() {
           </thead>
           <tbody>
             {consultants.map((consultant) => (
-              <tr key={consultant._id}>
-                <td>{consultant.username}</td>
-                <td>{consultant.email}</td>
-                <td>{consultant.age}</td>
-                <td>{consultant.address}</td>
+              <tr className="del-table" key={consultant._id}>
+                <td className="del-table">{consultant.username}</td>
+                <td className="del-table">{consultant.email}</td>
+                <td className="del-table">{consultant.age}</td>
+                <td className="del-table">{consultant.address}</td>
               </tr>
             ))}
           </tbody>
         </table>
+    </div>
     </div>
   )
 }
