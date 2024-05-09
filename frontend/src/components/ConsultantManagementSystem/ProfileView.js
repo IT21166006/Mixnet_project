@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 export default function ProfileView() {
   const [consultantData, setConsultantData] = useState({});
   const [email, setEmail] = useState(""); // State to store the email of the consultant whose profile to display
@@ -29,12 +30,12 @@ export default function ProfileView() {
   };
 
   return (
-    <div className="container">
+    <div className="profileView-container ">
       <div className="row">
         <div className="col-md-12">
-          <h1>Consultant Profile</h1>
-          <div className="form-group">
-            <label htmlFor="email">Enter Consultant Email:</label>
+          <h1 className="topic-profile">Consultant Profile</h1>
+          <div className="form-group-profile">
+            <label className="label-profile" htmlFor="email">Enter Consultant Email:</label>
             <input
               type="email"
               className="form-control"
@@ -45,12 +46,14 @@ export default function ProfileView() {
             />
           </div>
           {consultantData && (
-            <div>
+            <div className="profile-frame">
               <h2>Consultant Details</h2>
-              <p><strong>Username:</strong> {consultantData.username}</p>
-              <p><strong>Address:</strong> {consultantData.address}</p>
-              <p><strong>Age:</strong> {consultantData.age}</p>
-              <p><strong>Email:</strong> {consultantData.email}</p>
+              <div className="consult-details">
+              <p className="conuslt-details"><strong>Username:</strong> {consultantData.username}</p>
+              <p className="conuslt-details"><strong>Address:</strong> {consultantData.address}</p>
+              <p className="conuslt-details"><strong>Age:</strong> {consultantData.age}</p>
+              <p className="conuslt-details"><strong>Email:</strong> {consultantData.email}</p>
+              </div>
             </div>
           )}
         </div>
