@@ -1,58 +1,250 @@
 
+// import React, { useState, useEffect } from "react";
+// import axios from "axios"
+// import { useParams, Link, useNavigate } from "react-router-dom";
+
+// export default function EditEmplyee() {
+
+//     const navigate = useNavigate();
+//     const { id } = useParams();
+//     const [emplyeeedit, setEmplyee] = useState({
+
+
+//         firstname: '',
+//         LastName: '',
+//         SureName: '',
+//         aboutme: '',
+//         number: '',
+//         email: '',
+//         Education: '',
+//         Cetification: '',
+//         Skills: '',
+//         companyName: '',
+//         sdate: ''
+
+//     });
+
+//     //Fetch data
+//     useEffect(() => {
+//         function getEmployee() {
+//             axios.get("http://localhost:8070/stock/get/" + id)
+//                 .then((res) => {
+//                     setEmplyee(res.data.data);
+//                     console.log(res.data.data);
+//                 }).catch((err) => {
+//                     alert(err.message);
+//                 })
+//         }
+//         getEmployee();
+//     }, [])
+
+//     const handleChange = (e) => {
+//         setstocks({
+//             ...emplyeeedit,
+//             [e.target.name]: e.target.value
+//         });
+//     };
+
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         // console.log(stock); // or save the data to your backend
+//         axios
+//             .put('http://localhost:8070/emplyee/update/' + id, emplyeeedit)
+//             .then((response) => {
+//                 // console.log(response.data);
+//                 alert("emplyee Updated");
+//                 navigate('/ManageItems');
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//             });
+//     };
+
+
+//     return (
+//         <div><br></br>
+//             <div className="container">
+//                 <div className="StockTOPIC">
+//                     <h1>EDIT EMPOLYEE</h1>
+//                 </div>
+//                 <div className="Stocktitle">
+//                     <div className="additemg">
+//                         <form onSubmit={handleSubmit} >
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>first name :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="famer" value={stockedit.famer}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>Last Name:</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="ItemName" value={stockedit.ItemName}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for> SureName:</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="quantity" value={stockedit.quantity}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>about me:</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>email :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>Education :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>Cetification :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>Skills :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>companyName :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                              <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>companyName :</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="price" value={stockedit.price}
+//                                         onChange={handleChange}></input>
+//                                 </div>
+//                             </div>
+
+//                             <div className="row">
+//                                 <div className="col-md-4">
+//                                     <label for>Date:</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="Date" className="stk-input-insert" required name="sdate" value={stockedit.sdate}
+//                                         onChange={handleChange}>
+//                                     </input>
+//                                 </div>
+//                             </div>
+
+//                             <button type="submit" className="btn btn-primary">Save</button>
+//                             <Link to={'/StockManageItems'}><button className="btn btn-danger">Cancel</button></Link>
+//                         </form>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+
+// }
+
+
+
 import React, { useState, useEffect } from "react";
-import axios from "axios"
+import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-export default function EditEmplyee() {
+export default function EditEmployee() {
 
     const navigate = useNavigate();
     const { id } = useParams();
-    const [emplyeeedit, setEmplyee] = useState({
-
-
+    const [employeeEdit, setEmployeeEdit] = useState({
         firstname: '',
-        LastName: '',
-        SureName: '',
+        lastName: '',
+        sureName: '',
         aboutme: '',
         number: '',
         email: '',
-        Education: '',
-        Cetification: '',
-        Skills: '',
+        education: '',
+        certification: '',
+        skills: '',
         companyName: '',
         sdate: ''
-
     });
 
-    //Fetch data
+    // Fetch data
     useEffect(() => {
         function getEmployee() {
-            axios.get("http://localhost:8070/stock/get/" + id)
+            axios.get("http://localhost:8070/employee/get/" + id)
                 .then((res) => {
-                    setEmplyee(res.data.data);
+                    setEmployeeEdit(res.data.data);
                     console.log(res.data.data);
-                }).catch((err) => {
-                    alert(err.message);
                 })
+                .catch((err) => {
+                    alert(err.message);
+                });
         }
         getEmployee();
-    }, [])
+    }, []);
 
     const handleChange = (e) => {
-        setstocks({
-            ...emplyeeedit,
+        setEmployeeEdit({
+            ...employeeEdit,
             [e.target.name]: e.target.value
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(stock); // or save the data to your backend
         axios
-            .put('http://localhost:8070/emplyee/update/' + id, emplyeeedit)
+            .put('http://localhost:8070/employee/update/' + id, employeeEdit)
             .then((response) => {
-                // console.log(response.data);
-                alert("emplyee Updated");
+                alert("Employee Updated");
                 navigate('/ManageItems');
             })
             .catch((error) => {
@@ -60,32 +252,32 @@ export default function EditEmplyee() {
             });
     };
 
-
     return (
-        <div><br></br>
+        <div>
+            <br />
             <div className="container">
                 <div className="StockTOPIC">
-                    <h1>EDIT EMPOLYEE</h1>
+                    <h1>EDIT EMPLOYEE</h1>
                 </div>
                 <div className="Stocktitle">
                     <div className="additemg">
-                        <form onSubmit={handleSubmit} >
+                        <form onSubmit={handleSubmit}>
                             <div className="row">
                                 <div className="col-md-4">
-                                    <label for>first name :</label>
+                                    <label htmlFor="firstName">First Name:</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="famer" value={stockedit.famer}
-                                        onChange={handleChange}></input>
+                                    <input type="text" className="stk-input-insert" required name="firstname" value={employeeEdit.firstname} onChange={handleChange} />
                                 </div>
                             </div>
 
+
                             <div className="row">
-                                <div className="col-md-4">
-                                    <label for>Last Name:</label>
-                                </div>
-                                <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="ItemName" value={stockedit.ItemName}
+//                                 <div className="col-md-4">
+//                                     <label for>Last Name:</label>
+//                                 </div>
+//                                 <div className="col-md-8">
+//                                     <input type="text" className="stk-input-insert" required name="ItemName" value={stockedit.ItemName}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
@@ -171,24 +363,22 @@ export default function EditEmplyee() {
                                 </div>
                             </div>
 
+
                             <div className="row">
                                 <div className="col-md-4">
-                                    <label for>Date:</label>
+                                    <label htmlFor="sdate">Date:</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="Date" className="stk-input-insert" required name="sdate" value={stockedit.sdate}
-                                        onChange={handleChange}>
-                                    </input>
+                                    <input type="Date" className="stk-input-insert" required name="sdate" value={employeeEdit.sdate} onChange={handleChange} />
                                 </div>
                             </div>
 
                             <button type="submit" className="btn btn-primary">Save</button>
-                            <Link to={'/StockManageItems'}><button className="btn btn-danger">Cancel</button></Link>
+                            <Link to={'/ManageItems'}><button className="btn btn-danger">Cancel</button></Link>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    )
-
+    );
 }
