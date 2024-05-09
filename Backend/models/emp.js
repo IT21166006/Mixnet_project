@@ -1,66 +1,57 @@
-//conect mongo db
-const mongoose = require ("mongoose");
-//const { required } = require('nodemon/lib/config');
- 
+// Connect to MongoDB
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-//creat employee schema
+
+// Create employee schema
 const employeeSchema = new Schema({
-
     firstname: {
-        type : String,
-        required : true
+        type: String,
+        required: true
     },
-    LastName : {
-        type : String,
-        required : true
-
+    LastName: {
+        type: String,
+        required: true
     },
-    SureName :{
-        type :String,
-        required : true
+    SureName: {
+        type: String,
+        required: true
     },
-
-    aboutme : {
-        type : Number,
-        required : true
+    aboutme: {
+        type: String,
+        required: true
     },
-    number : {
-        type : Number,
-        required : true
+    number: {
+        type: Number,
+        required: true
     },
     email: {
-        type :String,
-        required : true
+        type: String,
+        required: true
     },
-    Education :{
-
-        type : String,
-        required : true
+    Education: {
+        type: String,
+        required: true
     },
-    Cetification :{
-
-        type : String,
-        required : true
+    Certification: {
+        type: String,
+        required: true
     },
-    Skills :{
-
-        type : String,
-        required : true
+    Skills: {
+        type: String,
+        required: true
     },
-
-    companyName :{
-
-        type : String,
-        required : true
+    companyName: {
+        type: String,
+        required: true
     },
-    companyName :{
+    sdate: {
+        type: Date,
+        required: true
+    }
+});
 
-        type : String,
-        required : true
-    },
-    
-})
-//creat model to employee
-const employee = mongoose.model("employee",employeeSchema);
-//eport module
-module.exports = employee;
+// Create model for employee
+const Employee = mongoose.model("Employee", employeeSchema); // Capitalized 'Employee'
+
+// Export module
+module.exports = Employee; // Fixed typo 'eport'

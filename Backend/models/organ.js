@@ -1,37 +1,30 @@
-//conect mongo db
-const mongoose = require ("mongoose");
-//const { required } = require('nodemon/lib/config');
- 
+const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
-//creat organization schema
+
 const OrganizationsSchema = new Schema({
-
     OrganName: {
-        type : String,
-        required : true
+        type: String,
+        required: true
     },
-
-
-    aboutus : {
-        type : Number,
-        required : true
+    aboutus: {
+        type: String,
+        required: true
     },
-    phoneNumber : {
-        type : Number,
-        required : true
+    phoneNumber: {
+        type: Number,
+        required: true
     },
     oemail: {
-        type :String,
-        required : true
+        type: String,
+        required: true
     },
-    oaddress :{
+    oaddress: {
+        type: String,
+        required: true
+    }
+});
 
-        type : String,
-        required : true
-    },
-    
-})
-//creat model to employee
-const employeeo = mongoose.model("organization",OrganizationsSchema);
-//eport module
-module.exports = employeeo;
+const Organization = mongoose.model("Organization", OrganizationsSchema);
+
+module.exports = Organization;

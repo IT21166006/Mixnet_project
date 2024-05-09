@@ -11,7 +11,7 @@ router.route("/add").post((req, res) => {
   const number = Number(req.body.number);
   const email = req.body.email;
   const Education = req.body.Education;
-  const Cetification = req.body.Cetification;
+  const Certification = req.body.Certification;
   const Skills = req.body.Skills;
   const companyName = req.body.companyName;
   const sdate = req.body.sdate;
@@ -25,7 +25,7 @@ router.route("/add").post((req, res) => {
     number,
     email,
     Education,
-    Cetification,
+    Certification,
     Skills,
     companyName,
     sdate
@@ -52,7 +52,7 @@ router.route("/").get((req, res) => {
 //update
 router.route("/update/:id").put(async (req, res) => {
   let userId = req.params.id;
-  const { firstname, LastName, SureName, aboutme, number, email, Education, Cetification, Skills, companyName, sdate } = req.body;
+  const { firstname, LastName, SureName, aboutme, number, email, Education, Certification, Skills, companyName, sdate } = req.body;
   //user id must change
   const UpdateEmployee = {
 
@@ -63,7 +63,7 @@ router.route("/update/:id").put(async (req, res) => {
     number,
     email,
     Education,
-    Cetification,
+    Certification,
     Skills,
     companyName,
     sdate

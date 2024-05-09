@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Organization = require("../models/organ.js");
 
 // Register new organization
-router.route("/register").post((req, res) => {
+router.post("/register", (req, res) => {
   const { OrganName, oaddress, phoneNumber, oemail, aboutus } = req.body;
 
   const newOrganization = new Organization({
@@ -24,7 +24,7 @@ router.route("/register").post((req, res) => {
 });
 
 // Read all organizations
-router.route("/").get((req, res) => {
+router.get("/all", (req, res) => {
   Organization.find()
     .then((organizations) => {
       res.json(organizations);
@@ -36,7 +36,7 @@ router.route("/").get((req, res) => {
 });
 
 // Update organization details
-router.route("/update/:id").put(async (req, res) => {
+router.put("/update/:id", (req, res) => {
   const { OrganName, oaddress, phoneNumber, oemail, aboutus } = req.body;
   const organizationId = req.params.id;
 
@@ -59,7 +59,7 @@ router.route("/update/:id").put(async (req, res) => {
 });
 
 // Delete organization
-router.route("/delete/:id").delete(async (req, res) => {
+router.delete("/delete/:id", (req, res) => {
   const organizationId = req.params.id;
 
   Organization.findByIdAndDelete(organizationId)
@@ -73,7 +73,7 @@ router.route("/delete/:id").delete(async (req, res) => {
 });
 
 // Get organization by ID
-router.route("/get/:id").get(async (req, res) => {
+router.get("/get/:id", (req, res) => {
   const organizationId = req.params.id;
 
   Organization.findById(organizationId)
@@ -91,7 +91,7 @@ router.get('/search/:searchInput', async (req, res) => {
   try {
     const { searchInput } = req.params;
     const organizations = await Organization.find({
-      name: { $regex: searchInput, $options: 'i' }
+      OrganName: { $regex: searchInput, $options: 'i' }
     });
     res.json(organizations);
   } catch (err) {
