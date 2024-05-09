@@ -194,7 +194,7 @@
   .w3-container-con {
     padding: 0.01em 16px;
     margin-top: 10px;
-    background-color: aqua;
+    background-color: rgb(69, 119, 194);
     width: 95%;
     height: 500px;
     border-radius: 13px;
@@ -308,6 +308,11 @@
 
 .consult-details{
   margin-top: 20px;
+}
+
+.back-frame{
+  background-color: #84c586;
+  
 }
 
 /* All conusult    All conusult     All conusult   All conusult   All conusult*/

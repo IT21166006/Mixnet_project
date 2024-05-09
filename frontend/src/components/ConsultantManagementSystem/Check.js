@@ -10,10 +10,10 @@ import ProfileImg from "./profile.jpeg";
 export default function Check() {
   return (
     <div>
-      <div>
+        <div className="back-frame">
       <ProfileSidebar/>
 
-      <div className="content-con">
+      <div className="content-con" >
         <div className="w3-container-con w3-teal">
             <div className="ProfileLeft-con">
               <div className="imgAndIcon"><img src={ProfileImg} alt="Your Picture" className="Profpic-con" />

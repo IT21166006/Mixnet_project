@@ -30,6 +30,7 @@ export default function ProfileView() {
   };
 
   return (
+    <div className="back-frame">
     <div className="profileView-container ">
       <div className="row">
         <div className="col-md-12">
@@ -58,6 +59,7 @@ export default function ProfileView() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
