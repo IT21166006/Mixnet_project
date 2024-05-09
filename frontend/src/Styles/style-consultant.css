@@ -323,3 +323,34 @@
 .Del-table{
   margin-top: 8px;
 }
+
+.delete-btn-consultant{
+  width: 80px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #ed2929;
+    color: #eeefee;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.confirm-btn-consultant{
+  width: 80px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #5068f4;
+    color: #eeefee;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.cancel-btn-consultant{
+  width: 80px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #5068f4;
+    color: #eeefee;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-left: 12px;
+}
