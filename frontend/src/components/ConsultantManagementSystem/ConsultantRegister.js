@@ -21,6 +21,12 @@ export default function ConsultantRegister(){
     return pattern.test(email);
   };
 
+  // Function to validate username
+  const validateUsername = (username) => {
+    const pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
+    return pattern.test(username);
+  };
+
   // Function to handle form submission
   const sendData = (e) => {
     e.preventDefault();
@@ -28,6 +34,12 @@ export default function ConsultantRegister(){
     // Check if email is valid
     if (!validateEmail(email)) {
       alert("Please enter a valid Gmail address.");
+      return;
+    }
+
+    // Check if username is valid
+    if (!validateUsername(username)) {
+      alert("Username should contain both letters and numbers.");
       return;
     }
 
@@ -81,7 +93,7 @@ export default function ConsultantRegister(){
                 
             </div>
 
-            <div className=""><p>should be simple letters with numbers</p></div>
+            <div className="user-guide-register"><p> *should be contain both letters and numbers</p></div>
 
             <div className="form-group-con">
               <label className="label-con" htmlFor="username">

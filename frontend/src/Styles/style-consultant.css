@@ -28,7 +28,7 @@
     padding: 20px;
     padding-right: 30px;
     border-radius: 15px;
-    width: 500px;
+    width: 550px;
     margin-bottom: 60px;
     
     
@@ -53,15 +53,15 @@
   }
 
   .form-group-con {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     display: flex;
   }
   
   .label-con {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    margin-top: 6px;
+    margin-top: 10px;
     margin-bottom: 5px;
     margin-right: 15px;
     width: 180px;
@@ -72,7 +72,7 @@
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .button-group-con {
@@ -86,10 +86,13 @@
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
-    width: 190px;
+    width: 360px;
     height: auto;
+    margin-left: 140px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   .Regbutton-con:hover {
@@ -353,4 +356,11 @@
     font-weight: 500;
     border-radius: 10px;
     margin-left: 12px;
+}
+
+/* Consult Register      Consult Register       Consult Register    Consult Register */
+.user-guide-register{
+  color: red;
+  margin-left: 150px;
+  margin-top: -40px;
 }
