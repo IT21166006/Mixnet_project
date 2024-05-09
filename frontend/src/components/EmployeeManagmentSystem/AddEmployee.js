@@ -1,57 +1,50 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function AddEmployee(){
+export default function AddEmployee() {
+  const [firstname, setFirstname] = useState("");
+  const [LastName, setLastName] = useState("");
+  const [SureName, setSureName] = useState("");
+  const [aboutme, setAboutme] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [Education, setEducation] = useState("");
+  const [Certification, setCertification] = useState("");
+  const [Skills, setSkills] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [sdate, setSdate] = useState("");
 
-   //Create variable to inputs
+  const navigate = useNavigate();
 
-   const [firstname, setFirstname] = useState("");
-   const [LastName, setLastName] = useState("");
-   const [SureName, setSureName] = useState("");
-   const [aboutme, setAboutme] = useState("");
-   const [number, setNumber] = useState("");
-   const [email, setEmail] = useState("");
-   const [Education, setEducation] = useState("");
-   const [Certification, setCertification] = useState("");
-   const [Skills, setSkills] = useState("");
-   const [companyName, setCompanyName] = useState("");
-   const [sdate, setSdate] = useState("");
-
-
-
-const navigate = useNavigate();
-
-//send data to backend
- 
-function sendData(e){
+  function sendData(e) {
     e.preventDefault();
 
-    const newsemplyee = {
-        firstname,
-        LastName,
-        SureName,
-        aboutme,
-        number,
-        email,
-        Education,
-        Cetification,
-        Skills,
-        companyName,
-        sdate
+    const newEmployee = {
+      firstname,
+      LastName,
+      SureName,
+      aboutme,
+      number,
+      email,
+      Education,
+      Certification,
+      Skills,
+      companyName,
+      sdate
+    };
 
-    }
-    //pass data to backend
-  axios.post("http://localhost:8070/stock/add",newsemplyee).then(()=>{
-    alert("emplyee add succesful");
-    navigate('/ManageItems')
-  }).catch((err)=>{
-    alert("unsuccesfull")
-  })
+    axios.post("http://localhost:8070/employee/add", newEmployee)
+      .then(() => {
+        alert("Employee added successfully");
+        navigate('/ManageEmployees');
+      })
+      .catch((err) => {
+        alert("Failed to add employee");
+      });
+  }
 
-}
-
-    return(
+  return (
         <div>
             <br></br>
             
