@@ -27,9 +27,7 @@ function App() {
       
 
           <Routes>
-
-          
-
+            
             {/* Employee Managmen System */}
             <Route path='/AddStock' element={<AddStock/>} />
             <Route path='/StockDashboard' element={<StockDashboard/>} />
@@ -37,7 +35,7 @@ function App() {
             <Route path='/StockManageItems' element={<ManageItems/>} />
             <Route path='/Stockreport' element={<Stockreport/>} />
             <Route path='/InStock' element={<InStock/>} />
-            
+
           </Routes>
           <Footer/>
     

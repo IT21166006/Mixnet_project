@@ -9,7 +9,7 @@ function ManageItems() {
   // Fetch data
   function getUsers() {
     axios
-      .get("http://localhost:8070/stock/")
+      .get("http://localhost:8070/employee/")
       .then((res) => {
         setUsers(res.data);
       
@@ -28,7 +28,7 @@ function ManageItems() {
   function deletedata(i) {
     if (window.confirm('Do you want to delete "' + i.name + '" ?')) {
       axios
-        .delete("http://localhost:8070/stock/delete/" + i._id)
+        .delete("http://localhost:8070/employee/delete/" + i._id)
         .then(() => {
           getUsers();
         })
@@ -42,7 +42,7 @@ function ManageItems() {
   function searchUser() {
     if (searchInput !== "") {
       axios
-        .get(`http://localhost:8070/stock/search/${searchInput}`)
+        .get(`http://localhost:8070/employee/search/${searchInput}`)
         .then((res) => {
           setUsers(res.data);
         })

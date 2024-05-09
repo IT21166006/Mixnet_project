@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Organization = require("../models/organization");
+const Organization = require("../models/organ.js");
 
 // Register new organization
 router.route("/register").post((req, res) => {

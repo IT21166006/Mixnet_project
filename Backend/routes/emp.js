@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Employee = require("../models/employee");
+const Employee = require("../models/emp.js");
 
 
 //add item

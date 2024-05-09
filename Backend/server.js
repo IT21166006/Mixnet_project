@@ -7,7 +7,7 @@ const app = express();
 require("dotenv").config();
 
 
-const PORT = process.env.PORT || 8070; 
+const PORT = process.env.PORT || 5000; 
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -28,9 +28,12 @@ connection.once("open", () => {
 
 
 
-//Buisness Routs
-const businessRouter = require("./routes/business.js");
-app.use("/business",businessRouter);
+
+const empRouter = require("./routes/emp.js");
+app.use("/emp",empRouter);
+
+const organRouter = require("./routes/organ.js");
+app.use("/organ",organRouter);
 
 
 app.listen(PORT, () => {
