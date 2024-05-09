@@ -16,6 +16,7 @@ import DeliveryLogin from './components/ConsultantManagementSystem/DeliveryLogin
 import './Styles/style-consultant.css';
 import AddQualifications from './components/ConsultantManagementSystem/AddQualifications';
 import AllConsultant from './components/ConsultantManagementSystem/AllConsultant';
+import Check from './components/ConsultantManagementSystem/Check';
 
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path = '/dellogin' exact element = {<DeliveryLogin/>}></Route>
             <Route path = '/addOthers' exact element = {<AddQualifications/>}></Route>
             <Route path = '/all' exact element = {<AllConsultant/>}></Route>
+            <Route path = '/ch' exact element = {<Check/>}></Route>
             
             
           </Routes>
