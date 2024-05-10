@@ -50,10 +50,11 @@ export default function EditProfile() {
 
   return (
     <div>
-      <h1>Edit Consultant Profile</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="editProfile-container">
+      <h1 className="topic-editProfile">Edit Consultant Profile</h1>
+      <form className="edit-form" onSubmit={handleSubmit}>
         <div>
-          <label>Username:</label>
+          <label className="edit-label">Username:</label>
           <input type="text" name="username" value={formData.username} onChange={handleChange} />
         </div>
         <div>
@@ -68,10 +69,11 @@ export default function EditProfile() {
           <label>Email:</label>
           <input type="email" name="email" value={formData.email} onChange={handleChange} />
         </div>
-        <button type="submit">Update</button>
+        <button className="btn-update-consult" type="submit">Update</button>
         
 
       </form>
+    </div>
     </div>
   );
 }

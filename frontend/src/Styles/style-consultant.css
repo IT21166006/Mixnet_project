@@ -594,3 +594,31 @@ body {
   }
 }
 
+/* editProfile   editProfile     editProfile    editProfile  editProfile*/
+.editProfile-container{
+  background-color: #00B833;
+  margin-top: 80px;
+  margin-left: 100px;
+  border-radius: 20px;
+  padding: 50px;
+  
+}
+
+.topic-editProfile{
+  font-weight: 600;
+}
+
+
+
+.btn-update-consult{
+  width: 80px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #ed2929;
+    color: #eeefee;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+}
