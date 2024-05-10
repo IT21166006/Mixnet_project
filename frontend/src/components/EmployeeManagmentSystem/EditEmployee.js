@@ -77,7 +77,7 @@ export default function EditEmployee() {
 
 
                             <div className="row">                                 <div className="col-md-4">
-                                    <label for>Last Name:</label>                                </div>
+                                <label for>Last Name:</label>                                </div>
                                 <div className="col-md-8">
                                     <input type="text" className="stk-input-insert" required name="lastName" value={employeeEdit.lastName}
                                         onChange={handleChange}></input>
@@ -155,7 +155,7 @@ export default function EditEmployee() {
                                 </div>
                             </div>
 
-                             <div className="row">
+                            <div className="row">
                                 <div className="col-md-4">
                                     <label for>companyName :</label>
                                 </div>

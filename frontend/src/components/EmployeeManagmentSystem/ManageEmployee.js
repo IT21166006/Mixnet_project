@@ -82,10 +82,7 @@ function ManageEmployee() {
                             <i class='bx bxs-add-to-queue' ></i>
                                 <span className="text">Add Employee</span>
                             </Link>
-                            <Link to={"/Stockreport"} className="btn btn-warning">
-                              <i class='bx bxs-report'></i>
-                                <span className="text">Reportgenarate</span>
-                            </Link>
+                    
                             </div>
 
                             <div className="">
