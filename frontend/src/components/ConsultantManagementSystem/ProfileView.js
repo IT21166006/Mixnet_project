@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 
+
 export default function ProfileView() {
   const [consultantData, setConsultantData] = useState({});
   const [email, setEmail] = useState(""); // State to store the email of the consultant whose profile to display
@@ -30,6 +31,7 @@ export default function ProfileView() {
   };
 
   return (
+    <div>
     <div className="back-frame">
     <div className="profileView-container ">
       <div className="row">
@@ -60,6 +62,13 @@ export default function ProfileView() {
         </div>
       </div>
     </div>
+    </div>
+
+     
+
+
+    
+     
     </div>
   );
 }
