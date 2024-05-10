@@ -51,7 +51,7 @@ const employeeSchema = new Schema({
 });
 
 // Create model for employee
-const Employee = mongoose.model("Employee", employeeSchema); // Capitalized 'Employee'
+const Employee = mongoose.model("Employee", employeeSchema); 
 
 // Export module
-module.exports = Employee; // Fixed typo 'eport'
+module.exports = Employee;
