@@ -1,7 +1,7 @@
 
 // module.exports = router;
 const router = require("express").Router();
-const {response} = require("express");
+const { response } = require("express");
 const admin = require("../models/admin");
 
 // http://localhost:8070/admin/add
@@ -74,13 +74,13 @@ router.route("/delete/:id").delete(async (req, res) => {
 });
 
 // http://localhost:8070/admin/get/:id
-router.route("/get/:id").get(async(req,res) => {
+router.route("/get/:id").get(async (req, res) => {
   let userID = req.params.id;
-  const user = await admin.findById(userID).then((admin)=>{
-      res.status(200).send({status: "User fetched", admin})
+  const user = await admin.findById(userID).then((admin) => {
+    res.status(200).send({ status: "User fetched", admin })
   }).catch((err) => {
-      console.log(err.message);
-      res.status(500).send({status: "Error with get user"})
+    console.log(err.message);
+    res.status(500).send({ status: "Error with get user" })
   })
 })
 
@@ -100,16 +100,16 @@ router.get('/search/:searchInput', async (req, res) => {
 });
 
 //login
-router.route("/loginAdmin").post(async(req,res) => {
+router.route("/loginAdmin").post(async (req, res) => {
 
-  try{
-      const email = req.body.email;
-      const password = req.body.password;
-      console.log(email)
-      const newadmin = await admin.findOne({email: email, password: password})
-      res.status(200).json({data: newadmin, status:200});
-  }catch(err){
-      res.status(500).json({message: err.message});
+  try {
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log(email)
+    const newadmin = await admin.findOne({ email: email, password: password })
+    res.status(200).json({ data: newadmin, status: 200 });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 })
 

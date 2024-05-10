@@ -14,13 +14,13 @@ function App() {
   return (
     <div className="App">
 
-          <Routes>
+      <Routes>
 
-            {/* Bussiness Managment System */}
-            <Route path = '/createprofile' exact element = {<CreateBusinessProfile/>}></Route>
-            <Route path = '/profile' exact element = {<BusinessProfile/>}></Route>
-          </Routes>
-    
+        {/* Bussiness Managment System */}
+        <Route path='/createprofile' exact element={<CreateBusinessProfile />}></Route>
+        <Route path='/profile/:email' exact element={<BusinessProfile />}></Route>
+      </Routes>
+
     </div>
   );
 }

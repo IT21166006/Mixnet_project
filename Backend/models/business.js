@@ -6,45 +6,44 @@ const Schema = mongoose.Schema;
 //create business schema
 const businessSchema = new Schema(
     {
-    
+
         //business Name
-        bname : {
-            type : String,
-            required : true
+        bname: {
+            type: String,
+            required: true
         },
         //Item Name
-        email : {
-            type : String,
-            required : true
+        email: {
+            type: String,
+            required: true
         },
 
         //address
-        address : {
-            type : String,
-            required : true
+        address: {
+            type: String,
+            required: true
         },
 
         // business type
-        type : {
-            type : String,
-            required :true
+        type: {
+            type: String,
+            required: true
         },
 
         //discription
-        discription : {
-            type : String,
-            required :true
+        discription: {
+            type: String,
+            required: true
         },
 
-        //farmer Name
-        //img : {
-        //    type : String,
-        //    required : true
-        //},
+        //image
+        image: {
+            type: String 
+        }
     }
 )
 //create model to bussiness
-const bussiness = mongoose.model("bussiness",businessSchema);
+const bussiness = mongoose.model("bussiness", businessSchema);
 
 //export module
 module.exports = bussiness;

@@ -1,16 +1,16 @@
 //import react
-import React,{useState,useEffect} from "react";
-import {Link,useNavigate,useParams} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import MixNet from "./MixNet.png";
 
 //import axios
-import axios from "axios"; 
+import axios from "axios";
 
 //export function create profile
-export default function CreateBusiProf(){
-    
-    const {id} = useParams();
-    const {idNo} = useParams();
+export default function CreateBusiProf() {
+
+    const { id } = useParams();
+    const { idNo } = useParams();
 
     //const navigate = useNavigate()
     //create variebles to inputs
@@ -19,32 +19,13 @@ export default function CreateBusiProf(){
     const [email, setemail] = useState("");
     const [type, settype] = useState("");
     const [discription, setdiscription] = useState("");
+    const [image, setimage] = useState("");
 
 
-    const [createProf , setcreateProf] = useState([]);
-  
-    
-    // // Fetch data
-    // function getBids() {
-    //   axios
-    //     .get("http://localhost:8070/bidding/select_own/"+idNo)
-    //     .then((res) => {
-    //     setbids(res.data);
-        
-    //     })
-    //     .catch((err) => {
-    //       alert(err.message);
-    //     });
-    // }
-  
-    // useEffect(() => {
-    //   getBids();
-    // }, []);
-
-
+    const [createProf, setcreateProf] = useState([]);
 
     //Create BUsiness Profile
-    function sendData(e){
+    function sendData(e) {
         e.preventDefault();
 
 
@@ -55,42 +36,20 @@ export default function CreateBusiProf(){
             address,
             email,
             type,
-            discription
+            discription,
+            image
         }
 
         //pass data to backend
-        axios.post("http://localhost:8070/business/create",newBusiness).then(()=>{
+        axios.post("http://localhost:8070/business/create", newBusiness).then(() => {
             alert("Profile Create Succsesful")
         })
-        .catch((err)=>{
-            alert("Somthing went wrong")
-        });
+            .catch((err) => {
+                alert("Somthing went wrong")
+            });
     };
 
-    // //delete
-    // function deletedata(i) {
-    //     if (window.confirm('Do you want to delete "' + i.itemName + '"')) {
-    //       axios
-    //         .delete("http://localhost:8070/bidding/delete/" + i._id)
-    //         .then(() => {
-    //           getBids();
-    //         })
-    //         .catch((err) => {
-    //           alert(err);
-    //         });
-    //     }
-    //   }
-
-    //   //update
-
-    //   const handleChange = (e) => {
-    //     setbidedit({
-    //       ...setbidedit,
-    //       [e.target.name]: e.target.value
-    //     });
-    //   };
-    
-    return(
+    return (
         <div className="container business-con">
             <div className="row">
                 <div className="col-md-6 business-side-bar business-img-align business-col-bg">
@@ -106,32 +65,37 @@ export default function CreateBusiProf(){
                         <form onSubmit={sendData}>
 
                             <input className="business-prof-input" type="text" placeholder="Business Name"
-                            onChange={(e)=>{
-                                setbname(e.target.value);
-                            }}
+                                onChange={(e) => {
+                                    setbname(e.target.value);
+                                }}
                             ></input><br></br>
 
                             <input className="business-prof-input" type="email" placeholder="Email (Current Personal Account)"
-                            onChange={(e)=>{
-                                setemail(e.target.value);
-                            }}
+                                onChange={(e) => {
+                                    setemail(e.target.value);
+                                }}
                             ></input><br></br>
 
                             <input className="business-prof-input" type="text" placeholder="Address"
-                            onChange={(e)=>{
-                                setaddress(e.target.value);
-                            }}
+                                onChange={(e) => {
+                                    setaddress(e.target.value);
+                                }}
                             ></input><br></br>
 
                             <input className="business-prof-input" type="text" placeholder="Business Type"
-                            onChange={(e)=>{
-                                settype(e.target.value);
-                            }}></input><br></br>
+                                onChange={(e) => {
+                                    settype(e.target.value);
+                                }}></input><br></br>
 
                             <input className="business-prof-input" type="text" placeholder="Discripton"
-                            onChange={(e)=>{
-                                setdiscription(e.target.value);
-                            }}></input><br></br>
+                                onChange={(e) => {
+                                    setdiscription(e.target.value);
+                                }}></input><br></br>
+
+                            <input className="business-prof-input" type="file" placeholder="Discripton"
+                                onChange={(e) => {
+                                    setimage(e.target.value);
+                                }}></input><br></br>
 
                             <button className="business-prof-button">CREATE ACCOUNT</button>
                         </form>
