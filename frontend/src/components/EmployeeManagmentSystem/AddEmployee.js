@@ -128,7 +128,7 @@ export default function AddEmployee() {
                     </div>
                 </div>
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-md-4">
                         <label className="stk-lable-insert">Education :</label>
                     </div>
@@ -138,7 +138,23 @@ export default function AddEmployee() {
                             setEducation(e.target.value);
                         }}></input>
                     </div>
-                </div> 
+                </div>  */}
+                <div className="row">
+    <div className="col-md-4">
+        <label className="stk-lable-insert">Education :</label>
+    </div>
+    <div className="col-md-8">
+        <select className="stk-input-insert" required onChange={(e) => { setEducation(e.target.value); }}>
+            <option value="">Select Education</option>
+            <option value="High School">High School</option>
+            <option value="Associate Degree">Associate Degree</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="Doctorate">Doctorate</option>
+            {/* Add more options as needed */}
+        </select>
+    </div>
+</div>
 
 
                 <div className="row">
@@ -194,7 +210,7 @@ export default function AddEmployee() {
                     </div>
                     
                 </div>
-                <Link to={'/ManageEmployees'}><button className="stk-btn-cancel">Cancel</button></Link>
+                <Link to={'/ManageEmployee'}><button className="stk-btn-cancel">Cancel</button></Link>
                  <button type="Submit" className="stk-btn-add">submit</button>
             </form>
             </div>

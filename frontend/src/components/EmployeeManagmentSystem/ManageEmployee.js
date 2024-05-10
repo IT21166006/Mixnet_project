@@ -78,7 +78,7 @@ function ManageEmployee() {
                                     
                                 </ul>
                             </div>
-                            <Link to={"/AddStock"} className="btn btn-success stk-button">
+                            <Link to={"/AddEmployee"} className="btn btn-success stk-button">
                             <i class='bx bxs-add-to-queue' ></i>
                                 <span className="text">Add Employee</span>
                             </Link>

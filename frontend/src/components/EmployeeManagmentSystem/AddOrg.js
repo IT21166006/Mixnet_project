@@ -21,7 +21,7 @@ export default function AddOrg() {
       aboutUs
     };
 
-    axios.post("http://localhost:5000/organization/add", newOrgan)
+    axios.post("http://localhost:5000/organ/add", newOrgan)
       .then(() => {
         alert("Organization added successfully");
         navigate('/ManageOrganizations');
@@ -34,7 +34,7 @@ export default function AddOrg() {
   return (
     <div>
       <br></br>
-      <div className="container">
+      <div className="create-organization">
         <div className="StockTOPIC">
           <h1>Add Organization</h1>
         </div>

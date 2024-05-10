@@ -16,6 +16,10 @@ export default function ViewOrg() {
       });
   }, []);
 
+  
+
+  
+
   return (
     <div>
       {organizations.map((org, index) => (
