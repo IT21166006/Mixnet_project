@@ -13,7 +13,7 @@ export default function AddEmployee() {
   const [Certification, setCertification] = useState("");
   const [Skills, setSkills] = useState("");
   const [companyName, setCompanyName] = useState("");
-  const [sdate, setSdate] = useState("");
+  const [sdate, setsdate] = useState("");
 
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ export default function AddEmployee() {
       sdate
     };
 
-    axios.post("http://localhost:8070/employee/add", newEmployee)
+    axios.post("http://localhost:5000/emp/add", newEmployee)
       .then(() => {
         alert("Employee added successfully");
         navigate('/ManageEmployees');

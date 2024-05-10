@@ -38,17 +38,18 @@ router.route("/add").post((req, res) => {
 
 })
 
-//read
-router.route("/").get((req, res) => {
+router.get("/", (req, res) => {
+  Employee.find()
+    .then((organizations) => {
+      res.json(organizations);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to retrieve organizations" });
+    });
+});
 
-  Employee.find().then((employee) => {
-    res.json(employee)
 
-  }).catch((err) => {
-    console.log(err)
-  })
-
-})
 //update
 router.route("/update/:id").put(async (req, res) => {
   let userId = req.params.id;

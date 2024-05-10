@@ -21,7 +21,7 @@ export default function AddOrg() {
       aboutUs
     };
 
-    axios.post("http://localhost:8070/organization/add", newOrgan)
+    axios.post("http://localhost:5000/organization/add", newOrgan)
       .then(() => {
         alert("Organization added successfully");
         navigate('/ManageOrganizations');

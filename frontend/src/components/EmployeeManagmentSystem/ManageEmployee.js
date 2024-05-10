@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function ManageItems() {
+function ManageEmployee() {
   const [users, setUsers] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   // Fetch data
   function getUsers() {
     axios
-      .get("http://localhost:8070/employee/")
+      .get("http://localhost:5000/emp/")
       .then((res) => {
         setUsers(res.data);
       
@@ -28,7 +28,7 @@ function ManageItems() {
   function deletedata(i) {
     if (window.confirm('Do you want to delete "' + i.name + '" ?')) {
       axios
-        .delete("http://localhost:8070/employee/delete/" + i._id)
+        .delete("http://localhost:5000/emp/delete/" + i._id)
         .then(() => {
           getUsers();
         })
@@ -42,7 +42,7 @@ function ManageItems() {
   function searchUser() {
     if (searchInput !== "") {
       axios
-        .get(`http://localhost:8070/employee/search/${searchInput}`)
+        .get(`http://localhost:5000/emp/search/${searchInput}`)
         .then((res) => {
           setUsers(res.data);
         })
@@ -72,7 +72,7 @@ function ManageItems() {
                             <div className="left">
                               <br></br>
                               <div className="StockTOPIC">
-                                <h1>Manage Items</h1>
+                                <h1>Manage employee</h1>
                                 </div>
                                 <ul className="breadcrumb">
                                     
@@ -145,7 +145,7 @@ function ManageItems() {
                                                         <td className="stk-tableb">{i.Skills}</td>
                                                         <td className="stk-tableb">{i.companyName}</td>
                                                         <td className="stk-tableb">{i.sdate}</td>
-                                                        <td className="stk-tableb"><Link to={`/EditStock/${i._id}`}><button type="button" className=" btn btn-success" >Update</button></Link></td>
+                                                        <td className="stk-tableb"><Link to={`/EditEmployee/${i._id}`}><button type="button" className=" btn btn-success" >Update</button></Link></td>
                                                         <td className="stk-tableb"><button type="button" className="btn btn-danger" onClick={(()=>deletedata(i))}>Remove</button></td>
                                                     </tr>
                                                 )
@@ -162,4 +162,4 @@ function ManageItems() {
     </div>
     )
 }
-  export default ManageItems
+  export default ManageEmployee
