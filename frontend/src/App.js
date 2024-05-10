@@ -29,7 +29,7 @@ function App() {
 
             {/* Delevery Managment System */}
             <Route path = '/consultReg' exact element = {<ConsultantRegister/>} ></Route>
-            <Route path = '/editProfile' exact element = {<EditProfile/>} ></Route>
+            <Route path = '/editProfile/:consultantId' exact element = {<EditProfile/>} ></Route>
             <Route path = '/consultprofile' exact element = {<ProfileView/>}></Route>
             <Route path = '/analytics' exact element = {<AnalyticsDashboard/>}></Route>
             <Route path = '/dellogin' exact element = {<DeliveryLogin/>}></Route>
