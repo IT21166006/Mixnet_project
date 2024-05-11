@@ -19,33 +19,43 @@ export default function CreateBusiProf() {
     const [email, setemail] = useState("");
     const [type, settype] = useState("");
     const [discription, setdiscription] = useState("");
-    const [image, setimage] = useState("");
+    const [image, setimage] = useState(null);
 
 
     const [createProf, setcreateProf] = useState([]);
 
     //Create BUsiness Profile
-    function sendData(e) {
+    const passData = (e) => {
         e.preventDefault();
 
-
-
-        //create javascript obj
-        const newBusiness = {
-            bname,
-            address,
-            email,
-            type,
-            discription,
-            image
-        }
+        const formData = new FormData();
+        formData.append("bname", bname);
+        formData.append("address", address);
+        formData.append("email", email);
+        formData.append("type", type);
+        formData.append("discription", discription);
+        formData.append("image", image); // Append the image file to the formData
 
         //pass data to backend
-        axios.post("http://localhost:8070/business/create", newBusiness).then(() => {
-            alert("Profile Create Succsesful")
-        })
+        axios
+            .post("http://localhost:8070/business/createbusiness", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data", // Set content type for formData
+                },
+            })
+            .then(() => {
+                alert("profile create successfully");
+                setbname("");
+                setaddress("");
+                setemail("");
+                settype("");
+                setdiscription("");
+                setimage(null); // Clear the image file after successful submission
+                //getPosts(); // Fetch posts again after adding a new one
+            })
             .catch((err) => {
-                alert("Somthing went wrong")
+                alert("Something went wrong");
+                console.error(err);
             });
     };
 
@@ -62,7 +72,7 @@ export default function CreateBusiProf() {
                     <h5>It's quick and essy</h5>
                     <hr className="hr"></hr>
                     <div className="business-form-box">
-                        <form onSubmit={sendData}>
+                        <form onSubmit={passData}>
 
                             <input className="business-prof-input" type="text" placeholder="Business Name"
                                 onChange={(e) => {
@@ -92,9 +102,9 @@ export default function CreateBusiProf() {
                                     setdiscription(e.target.value);
                                 }}></input><br></br>
 
-                            <input className="business-prof-input" type="file" placeholder="Discripton"
+                            <input className="business-prof-input" type="file" placeholder="Discripton" id="InputImage" accept="image/*"
                                 onChange={(e) => {
-                                    setimage(e.target.value);
+                                    setimage(e.target.files[0]);
                                 }}></input><br></br>
 
                             <button className="business-prof-button">CREATE ACCOUNT</button>
