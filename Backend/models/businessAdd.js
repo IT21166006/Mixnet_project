@@ -9,7 +9,6 @@ const advertisementSchema = new Schema(
         //title
         title: {
             type:String,
-            required:true
         },
 
         //image1
@@ -20,25 +19,21 @@ const advertisementSchema = new Schema(
         // price
         price: {
             type: Number,
-            required: true
         },
 
         //discription
         discription: {
             type: String,
-            required: true
         },
 
         //image
         contact: {
             type: Number ,
-            required : true
         },
 
         //auther
         auther:{
             type: String,
-            required:true
         }
 
     }

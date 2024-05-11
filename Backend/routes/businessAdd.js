@@ -41,7 +41,7 @@ router.route("/postadd").post(upload.single("image"), (req, res) => {
 })
 
 //----route of read data(all profiles)----done
-router.route("/getpost").get((req, res) => {
+router.route("/allpost").get((req, res) => {
     Advertisement.find()
         .then(Advertisement => {
             res.json(Advertisement);
