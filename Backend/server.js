@@ -32,6 +32,11 @@ connection.once("open", () => {
 const businessRouter = require("./routes/business.js");
 app.use("/business",businessRouter);
 
+//Buisness Routs
+const AdvertisementRouter = require("./routes/businessAdd.js");
+app.use("/advertisement",AdvertisementRouter);
+
+
 
 app.listen(PORT, () => {
     console.log (`Server is up and running on port number: ${PORT}`)
