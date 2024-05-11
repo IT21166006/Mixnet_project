@@ -22,7 +22,7 @@ export default function Addorgan() {
       aboutus,
     };
 
-    axios.post("http://localhost:5000/organ/register", newOragan)
+    axios.post("http://localhost:8080/organ/register", newOragan)
       .then(() => {
         alert("Employee added successfully");
         navigate('/ManageEmployees');
@@ -106,7 +106,7 @@ export default function Addorgan() {
 
                 {/* Add other input fields similarly */}
 
-                <Link to={'/ManageEmployees'}><button className="stk-btn-cancel">Cancel</button></Link>
+                <Link to={'/ViewOrgan'}><button className="stk-btn-cancel">Cancel</button></Link>
                  <button type="Submit" className="stk-btn-add">Submit</button>
             </form>
             </div>

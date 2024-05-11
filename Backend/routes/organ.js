@@ -6,11 +6,7 @@ router.post("/register", (req, res) => {
   const { OrganName, oaddress, phoneNumber, oemail, aboutus } = req.body;
 
   const newOrganization = new Organization({
-    OrganName,
-    oaddress,
-    phoneNumber,
-    oemail,
-    aboutus
+    
   });
 
   newOrganization.save()

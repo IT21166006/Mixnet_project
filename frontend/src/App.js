@@ -39,6 +39,8 @@ function App() {
             <Route path='/ViewOrgan' element={<ViewOrg/>} />
             <Route path='/EditEmployee/:id' element={<EditEmployee/>} />
             <Route path='/ManageEmployee' element={<ManageEmployee/>} />
+            <Route path='/AllEmployee' element={<AllEmployeeEmployee/>} />
+
             {/* <Route path='/manage' element={<ManageEmployee/>} /> */}
 
             {/* <Route path='/StockDashboard' element={<StockDashboard/>} /> */}

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 // Create employee schema
 const employeeSchema = new Schema({
+
     firstname: {
         type: String,
         required: true
@@ -47,6 +48,10 @@ const employeeSchema = new Schema({
     sdate: {
         type: Date,
         required: true
+    },
+
+    image: {
+        type: String 
     }
 });
 

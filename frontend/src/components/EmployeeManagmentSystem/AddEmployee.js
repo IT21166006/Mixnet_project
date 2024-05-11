@@ -1,62 +1,81 @@
+
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function AddEmployee() {
-  const [firstname, setFirstname] = useState("");
-  const [LastName, setLastName] = useState("");
-  const [SureName, setSureName] = useState("");
-  const [aboutme, setAboutme] = useState("");
-  const [number, setNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [Education, setEducation] = useState("");
-  const [Certification, setCertification] = useState("");
-  const [Skills, setSkills] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [sdate, setsdate] = useState("");
+export default function CreateOffer() {
+    const [firstname, setFirstname] = useState("");
+    const [LastName, setLastName] = useState("");
+    const [SureName, setSureName] = useState("");
+    const [aboutme, setAboutme] = useState("");
+    const [number, setNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [Education, setEducation] = useState("");
+    const [Certification, setCertification] = useState("");
+    const [Skills, setSkills] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [sdate, setsdate] = useState("");
+    const [itemimage, setItemimage] = useState(null);
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  function sendData(e) {
-    e.preventDefault();
+    const passData = (e) => {
+        e.preventDefault();
 
-    const newEmployee = {
-      firstname,
-      LastName,
-      SureName,
-      aboutme,
-      number,
-      email,
-      Education,
-      Certification,
-      Skills,
-      companyName,
-      sdate
+        const formData = new FormData();
+        formData.append("firstname", firstname);
+        formData.append("LastName", LastName);
+        formData.append("SureName", SureName);
+        formData.append("aboutme", aboutme);
+        formData.append("number", number);
+        formData.append("email", email);
+        formData.append("Education", Education);
+        formData.append("Certification", Certification);
+        formData.append("Skills", Skills);
+        formData.append("companyName", companyName);
+        formData.append("sdate", sdate);
+        formData.append("image", itemimage);
+
+        axios
+            .post("http://localhost:8080/emp/createemp", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+            .then(() => {
+                alert("Item added successfully");
+                setFirstname("");
+                setLastName("");
+                setSureName("");
+                setAboutme("");
+                setNumber("");
+                setEmail("");
+                setEducation("");
+                setCertification("");
+                setSkills("");
+                setCompanyName("");
+                setsdate("");
+                setItemimage(null);
+                navigate('/ManageEmployees');
+            })
+            .catch((err) => {
+                alert("Something went wrong");
+                console.error(err);
+            });
     };
 
-    axios.post("http://localhost:5000/emp/add", newEmployee)
-      .then(() => {
-        alert("Employee added successfully");
-        navigate('/ManageEmployees');
-      })
-      .catch((err) => {
-        alert("Failed to add employee");
-      });
-  }
-
-  return (
+    return (
         <div>
             <br></br>
-            
-        <div className="container">
-        <div className="StockTOPIC">
-                <h1>ADD Employee</h1>
-            </div>
-            <div className="Stocktitle">
-                <div className="additemg">
+            <div className="container">
+                <div className="StockTOPIC">
+                    <h1>ADD Employee</h1>
+                </div>
+                <div className="Stocktitle">
+                    <div className="additemg">
+                        <form onSubmit={passData}>
 
-            <form onSubmit={sendData}>
-                <div className="row">
+                        <div className="row">
                     <div className="col-md-4">
                         <label className="stk-lable-insert">Id :</label>
                     </div>
@@ -79,6 +98,18 @@ export default function AddEmployee() {
                         }}></input>
                     </div>
                 </div>
+
+
+                <div className="form-group">
+            <label htmlFor="InputImage">Item Image:</label>
+            <input
+              type="file"
+              className="form-control-file"
+              id="InputImage"
+              accept="image/*"
+              onChange={(e) => setItemimage(e.target.files[0])}
+            />
+          </div>
 
                 <div className="row">
                     <div className="col-md-4">
@@ -128,7 +159,7 @@ export default function AddEmployee() {
                     </div>
                 </div>
 
-                {/* <div className="row">
+                <div className="row">
                     <div className="col-md-4">
                         <label className="stk-lable-insert">Education :</label>
                     </div>
@@ -138,23 +169,7 @@ export default function AddEmployee() {
                             setEducation(e.target.value);
                         }}></input>
                     </div>
-                </div>  */}
-                <div className="row">
-    <div className="col-md-4">
-        <label className="stk-lable-insert">Education :</label>
-    </div>
-    <div className="col-md-8">
-        <select className="stk-input-insert" required onChange={(e) => { setEducation(e.target.value); }}>
-            <option value="">Select Education</option>
-            <option value="High School">High School</option>
-            <option value="Associate Degree">Associate Degree</option>
-            <option value="Bachelor's Degree">Bachelor's Degree</option>
-            <option value="Master's Degree">Master's Degree</option>
-            <option value="Doctorate">Doctorate</option>
-            {/* Add more options as needed */}
-        </select>
-    </div>
-</div>
+                </div> 
 
 
                 <div className="row">
@@ -210,12 +225,25 @@ export default function AddEmployee() {
                     </div>
                     
                 </div>
-                <Link to={'/ManageEmployee'}><button className="stk-btn-cancel">Cancel</button></Link>
-                 <button type="Submit" className="stk-btn-add">submit</button>
-            </form>
-            </div>
+
+
+
+
+
+                            
+
+
+
+                            
+                            <Link to={'/ManageEmployees'}><button className="stk-btn-cancel">Cancel</button></Link>
+                            <button type="submit" className="stk-btn-add">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    )
+    );
 }
+
+
+

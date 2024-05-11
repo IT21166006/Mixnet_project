@@ -22,6 +22,10 @@ const OrganizationsSchema = new Schema({
     oaddress: {
         type: String,
         required: true
+    },
+
+    image: {
+        type: String 
     }
 });
 
