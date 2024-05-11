@@ -29,26 +29,54 @@ export default function MyPostBusiness() {
         getadvetisement();
     }, []);
 
+    function deletedata(i) {
+        if (window.confirm('Do you want to delete "' + i.title + '"')) {
+          axios
+            .delete("http://localhost:8070/advertisement/delete/" + i._id)
+            .then(() => {
+              getadvetisement();
+            })
+            .catch((err) => {
+              alert(err);
+            });
+        }
+      }
+
     return (
         <div className="container">
             <div className="row">
                 <div className="col-md-3">a</div>
-                <div className="col-md-7">
-                    {advertisement.map((i, index) => (
+                <div className="col-md-7 ">
+                    {advertisement.map((add, index) => (
                         <div key={index}>
-                            <div>title = {i.title}</div>
-                            <div>
-                            <img src={`http://localhost:8070/Storage/AdvertisementUploads/${i.image}`}
-                                alt={i.image}
-                                style={{ width: 'auto', height: 'auto' }}
-                            />
-                            </div>
-                            <div>Price = {i.price}LKR</div>
-                            <div>Discription = {i.discription}</div>
-                            <div>Contact = {i.contact}</div>
-                            <div>Author = {i.author}</div>
+                            <section>
+                                <form>
+                                <div className="row business-post-card">
+                                    <div className="row ">{add.title}</div>
+                                    <div className="row">
+                                        <div className="col-md-8">
+                                            <div>
+                                                <img src={`http://localhost:8070/Storage/AdvetisementUploads/${add.image}`}
+                                                    alt={add.image}
+                                                    style={{ width: '400px', height: '300px' }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4">
+                                            <div>Price = {add.price}LKR</div>
+                                            <div>Discription = {add.discription}</div>
+                                            <div>Contact = {add.contact}</div>
+                                            <div>Author = {add.auther}</div>
+                                        </div>
+                                        <Link>DELETE</Link>
+                                    </div>
+                                </div>
+                                </form>
+                            </section>
+
                         </div>
-                    ))}
+                    ))};
+                    <div><br></br></div>
                 </div>
             </div>
         </div>

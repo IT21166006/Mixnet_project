@@ -72,6 +72,33 @@
    font-weight: 50px;
     
 }
+.business-post-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.business-post-card .row {
+    margin-bottom: 10px;
+}
+
+.business-post-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.business-post-card .col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-post-card .col-md-4 div {
+    margin-bottom: 10px;
+}
 
 /* .business-con
 {

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path"); // Import path module
 const app = express();
 require("dotenv").config();
 
@@ -23,10 +24,14 @@ mongoose.connect(URL, {
 
 const connection = mongoose.connection;
 connection.once("open", () => {
-    console.log("Mongodb Connection Success!");
-})
+    console.log("\x1b[35m", "Mongodb Connection Success!", "\x1b[35m");
+
+});
 
 
+// Serve uploaded images statically
+app.use("/Storage/AdvetisementUploads", express.static(path.join(__dirname, "Storage/AdvetisementUploads")));
+app.use("/Storage/ProfileUploads", express.static(path.join(__dirname, "Storage/PostUploads")));
 
 //Buisness Routs
 const businessRouter = require("./routes/business.js");
