@@ -9,7 +9,7 @@ export default function EditEmployee() {
     const { id } = useParams();
     const [employeeEdit, setEmployeeEdit] = useState({
         firstname: '',
-        lastName: '',
+        LastName: '',
         sureName: '',
         aboutme: '',
         number: '',
@@ -18,13 +18,14 @@ export default function EditEmployee() {
         certification: '',
         skills: '',
         companyName: '',
-        sdate: ''
+        sdate: '',
+        itemimage: ''
     });
 
     // Fetch data
     useEffect(() => {
         function getEmployee() {
-            axios.get("http://localhost:5000/emp/get/" + id)
+            axios.get("http://localhost:8080/emp/get/" + id)
                 .then((res) => {
                     setEmployeeEdit(res.data.data);
                     console.log(res.data.data);
@@ -66,6 +67,8 @@ export default function EditEmployee() {
                 <div className="Stocktitle">
                     <div className="additemg">
                         <form onSubmit={handleSubmit}>
+
+
                             <div className="row">
                                 <div className="col-md-4">
                                     <label htmlFor="firstName">First Name:</label>
@@ -76,13 +79,17 @@ export default function EditEmployee() {
                             </div>
 
 
-                            <div className="row">                                 <div className="col-md-4">
-                                <label for>Last Name:</label>                                </div>
+                            
+                            <div className="row"> 
+                            <div className="col-md-4">                          
+                                <label for>Last Name:</label>  
+                                </div>                               
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="lastName" value={employeeEdit.lastName}
+                                    <input type="text" className="stk-input-insert" required name="LastName" value={employeeEdit.LastName}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
+
 
                             <div className="row">
                                 <div className="col-md-4">
@@ -109,7 +116,7 @@ export default function EditEmployee() {
                                     <label for>email :</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="number" value={employeeEdit.number}
+                                    <input type="text" className="stk-input-insert" required name="email" value={employeeEdit.email}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
@@ -120,7 +127,7 @@ export default function EditEmployee() {
                                     <label for>Education :</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="email" value={employeeEdit.email}
+                                    <input type="text" className="stk-input-insert" required name="education" value={employeeEdit.education}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
@@ -130,7 +137,7 @@ export default function EditEmployee() {
                                     <label for>Cetification :</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="education" value={employeeEdit.education}
+                                    <input type="text" className="stk-input-insert" required name="certification" value={employeeEdit.certification}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
@@ -140,7 +147,7 @@ export default function EditEmployee() {
                                     <label for>Skills :</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="certification" value={employeeEdit.certification}
+                                    <input type="text" className="stk-input-insert" required name="skills" value={employeeEdit.skills}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
@@ -150,10 +157,11 @@ export default function EditEmployee() {
                                     <label for>companyName :</label>
                                 </div>
                                 <div className="col-md-8">
-                                    <input type="text" className="stk-input-insert" required name="skills" value={employeeEdit.skills}
+                                    <input type="text" className="stk-input-insert" required name="companyName" value={employeeEdit.companyName}
                                         onChange={handleChange}></input>
                                 </div>
                             </div>
+
 
                             <div className="row">
                                 <div className="col-md-4">

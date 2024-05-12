@@ -7,26 +7,26 @@ const OrganizationsSchema = new Schema({
         type: String,
         required: true
     },
-    aboutus: {
+    oaddress: {
         type: String,
         required: true
     },
     phoneNumber: {
-        type: Number,
+        type: String,
         required: true
     },
     oemail: {
         type: String,
         required: true
     },
-    oaddress: {
+    aboutus: {
         type: String,
         required: true
     },
-
     image: {
-        type: String 
+        type : String
     }
+
 });
 
 const Organization = mongoose.model("Organization", OrganizationsSchema);

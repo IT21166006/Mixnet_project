@@ -14,6 +14,12 @@ import AddOrg from './components/EmployeeManagmentSystem/AddOrg';
 import EditEmployee from './components/EmployeeManagmentSystem/EditEmployee';
 import ViewOrg from './components/EmployeeManagmentSystem/ViewOrgan';
 import ManageEmployee from './components/EmployeeManagmentSystem/ManageEmployee';
+import AllEmployeess from './components/EmployeeManagmentSystem/ManageEmployee';
+import Navbar from './components/Navbar';
+
+
+
+
 // import manage from './components/EmployeeManagmentSystem/ManageEmployee';
 // import ManageEmployee from './components/EmployeeManagment/ManageEmployee.js';
 
@@ -23,9 +29,10 @@ import ManageEmployee from './components/EmployeeManagmentSystem/ManageEmployee'
 //CSS for Main Systems
 // import './Styles/style-admin.css';
 // import './Styles/styles-business.css';
-// import './Styles/styles-employee.css';
+import './Styles/styles-employee.css';
 // import './Styles/style-consultant.css';
 // import './Styles/styles-user.css';
+
 
 //
 function App() {
@@ -34,18 +41,14 @@ function App() {
           <Routes>
             
             {/* Employee Managmen System */}
-            <Route path='/AddEmployee' element={<AddEmployee/>} />
+            <Route path='/' element={<AddEmployee/>} />
             <Route path='/AddOrg' element={<AddOrg/>} />
             <Route path='/ViewOrgan' element={<ViewOrg/>} />
             <Route path='/EditEmployee/:id' element={<EditEmployee/>} />
             <Route path='/ManageEmployee' element={<ManageEmployee/>} />
-            <Route path='/AllEmployee' element={<AllEmployeeEmployee/>} />
+            <Route path='/AllEmployeess' element={<AllEmployeess/>} />
+            {/* <Route path='/AllEmployee' element={<AllEmployeeEmployee/>} /> */}
 
-            {/* <Route path='/manage' element={<ManageEmployee/>} /> */}
-
-            {/* <Route path='/StockDashboard' element={<StockDashboard/>} /> */}
-            
-            {/* <Route path='/Stockreport' element={<Stockreport/>} /> */}
            
 
           </Routes>

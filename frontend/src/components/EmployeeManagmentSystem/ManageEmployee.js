@@ -61,7 +61,8 @@ function ManageEmployee() {
   }, [searchInput]);
 
   return (
-    <div className="container">
+    
+    <div className="tablecontainer">
       <div className="">
         <section id="content">
           <main>
@@ -69,15 +70,20 @@ function ManageEmployee() {
               <div className="left">
                 <br />
                 <div className="StockTOPIC">
-                  <h1>Manage employee</h1>
+                  <h1>Manage Employee</h1>
                 </div>
                 <ul className="breadcrumb"></ul>
               </div>
-              <Link to={"/AddEmployee"} className="btn btn-success stk-button">
+              <Link to={"/"} className="btn btn-success stk-button">
                 <i className="bx bxs-add-to-queue"></i>
                 <span className="text">Add Employee</span>
               </Link>
+              <Link to={"/AddOrg"} className="btn btn-success stk-button">
+                <i className="bx bxs-add-to-queue"></i>
+                <span className="text">Organizations</span>
+              </Link>
             </div>
+            
 
             <div className="">
               <div className="order">
@@ -105,18 +111,21 @@ function ManageEmployee() {
                 <table className="">
                   <thead>
                     <tr>
-                      <th className="stk-tableh">firstname</th>
+                      <th className="stk-tableh">First Name</th>
                       <th className="stk-tableh">Last Name</th>
                       <th className="stk-tableh">Sure Name</th>
-                      <th className="stk-tableh">about me</th>
-                      <th className="stk-tableh">number</th>
-                      <th className="stk-tableh">email</th>
+                      <th className="stk-tableh">About Me</th>
+                      <th className="stk-tableh">Number</th>
+                      <th className="stk-tableh">Email</th>
                       <th className="stk-tableh">Education</th>
                       <th className="stk-tableh">Certification</th>
                       <th className="stk-tableh">Skills</th>
-                      <th className="stk-tableh">companyName</th>
-                      <th className="stk-tableh">sdate</th>
-                      <th className="stk-tableh">image</th>
+                      <th className="stk-tableh">Company Name</th>
+                      <th className="stk-tableh">Date</th>
+                      <th className="stk-tableh">Image</th>
+                      <th className="stk-tableh" ></th>
+                      
+
                       <th className="stk-tableh">Actions</th>
                     </tr>
                   </thead>
@@ -133,21 +142,23 @@ function ManageEmployee() {
                         <td className="stk-tableb">{i.Certification}</td>
                         <td className="stk-tableb">{i.Skills}</td>
                         <td className="stk-tableb">{i.companyName}</td>
-                        <td className="stk-tableb">{i.sdate}</td>
+                        <td className="stk-tableb">{new Date(i.sdate).toLocaleDateString('en-US')}</td>
+                        
                         <td className="stk-tableb">
                           <img
-                            src={`http://localhost:8070/uploads/${i.image}`}
+                            src={`http://localhost:8080/uploads/${i.image}`}
                             alt={i.firstname}
-                            style={{ width: '80px', height: '80px' }}
+                            style={{ width: '50px', height: '50px' }}
                           />
                         </td>
+                        
                         <td className="stk-tableb">
                           <Link to={`/EditEmployee/${i._id}`}>
-                            <button type="button" className="btn btn-success">Update</button>
+                            <button type="button" className="stk-btn-add">Update</button>
                           </Link>
                         </td>
                         <td className="stk-tableb">
-                          <button type="button" className="btn btn-danger" onClick={() => deleteData(i)}>Remove</button>
+                          <button type="button" className="stk-btn-cancel" onClick={() => deleteData(i)}>Remove</button>
                         </td>
                       </tr>
                     ))}

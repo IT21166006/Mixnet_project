@@ -5,7 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
-
+const path = require("path");
 
 const PORT = process.env.PORT || 8080; 
 
@@ -34,6 +34,15 @@ app.use("/emp",empRouter);
 
 const organRouter = require("./routes/organ.js");
 app.use("/organ",organRouter);
+
+// Serve uploaded images statically
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Serve uploaded images statically
+app.use("/storages", express.static(path.join(__dirname, "storages")));
+app.use("/storages", express.static(path.join(__dirname, "storages")));
+
 
 
 app.listen(PORT, () => {

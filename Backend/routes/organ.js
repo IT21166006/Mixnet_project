@@ -8,7 +8,7 @@ const path = require('path');
 // Multer storage configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "../uploads")); // Destination folder for uploads
+    cb(null, path.join(__dirname, "../storages")); // Destination folder for uploads
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname); // Filename in uploads folder
@@ -21,26 +21,26 @@ const upload = multer({ storage: storage });
 
 
 router.route("/register").post(upload.single("image"), (req, res) => {
-  const { OrganName,oaddress,phoneNumber,oemail,number,aboutus} = req.body;
+  const { OrganName, oaddress, phoneNumber, oemail, aboutus } = req.body;
   const image = req.file.filename; // Get the filename of the uploaded image
 
-  const neworganizations = new Employee({
+  const newOrganizations = new Organization({
     OrganName,
     oaddress,
     phoneNumber,
     oemail,
-    number,
     aboutus,
+    image
   });
 
 
-  neworganizations.save().then(() => {
+  newOrganizations.save().then(() => {
     res.json(" Added organizations");
   }).catch((err) => {
     console.error(err);
+    res.status(500).json({ error: "Failed to add organization" });
   })
 })
-
 
 router.get("/", (req, res) => {
   Employee.find()
@@ -65,19 +65,20 @@ router.route("/update/:id").put(async (req, res) => {
     oaddress,
     phoneNumber,
     oemail,
-    aboutus
-  
+    aboutus,
+    image
+
   }
 
   const update = await Employee.findByIdAndUpdate(userId, Updateorganizations)
-  .then(() => {
+    .then(() => {
 
-    res.status(200).send({ status: "employee updated" })
+      res.status(200).send({ status: "employee updated" })
 
-  }).catch(() => {
-    console.log(err);
-    res.status(500).send({ status: "error with updating data", error: err.massage });
-  })
+    }).catch(() => {
+      console.log(err);
+      res.status(500).send({ status: "error with updating data", error: err.massage });
+    })
 
 })
 
@@ -103,7 +104,8 @@ router.put("/update/:id", (req, res) => {
     oaddress,
     phoneNumber,
     oemail,
-    aboutus
+    aboutus,
+    image
   };
 
   Organization.findByIdAndUpdate(organizationId, updatedOrganization)
@@ -117,7 +119,7 @@ router.put("/update/:id", (req, res) => {
 });
 
 // Delete organization
-router.delete("/delete/:id", (req, res) => {
+router.delete("/remove/:id", (req, res) => {
   const organizationId = req.params.id;
 
   Organization.findByIdAndDelete(organizationId)
@@ -156,6 +158,6 @@ router.get('/search/:searchInput', async (req, res) => {
     console.log(err);
     res.status(500).json({ error: "Failed to search organizations" });
   }
-});
 
+});
 module.exports = router;

@@ -1,340 +1,285 @@
-.create-organization {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
+.addform {
+  margin-bottom: 20px;
+  padding-left: 200px; 
+}
+
+.stk-input-insertdate{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.tablecontainer{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+}
+
+
+.StockTOPIC {
+  text-align: center;
+  margin-bottom: 20px;
   
-  .create-organization .div {
-    background-color: #ffffff;
-    height: 938px;
-    overflow: hidden;
-    position: relative;
-    width: 1440px;
-  }
+}
+
+.Stocktitle {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.stk-lable-insert {
+  font-weight: bold;
+}
+
+.stk-input-insert {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.stk-btn-cancel,
+.stk-btn-add {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.stk-btn-cancel {
+  background-color: #f44336;
+  color: white;
+  margin-right: 10px;
+}
+
+.stk-btn-add {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 10px;
+}
+
+.addform {
+  margin-left: 10px;
+  width: 50%;
+}
+
+/* Style file input */
+.form-control-file {
+  margin: 5px 0;
+}
+
+/* Optional: Add styling for file input label */
+.form-control-file::file-selector-button {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-control-file::file-selector-button:focus {
+  outline: none;
+}
+
+.form-control-file::file-selector-button:hover {
+  background-color: #0b7dda;
+}
+
+
+
+/* Assuming stk-tableh and stk-tableb are your custom styles for table header and table body */
+
+/* Style for the container */
+.container {
+  padding: 20px;
+}
+
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style for table headers */
+.stk-tableh {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Style for table body rows */
+.stk-tableb {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for table body cells */
+.stk-tableb td {
+  padding: 10px;
+}
+
+/* Style for table actions buttons */
+.btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for search input */
+.form-control {
+  width: 300px;
+}
+
+/* Style for Add Employee button */
+.btn-success {
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: 10px;
+  color: #000;
+}
+
+/* Style for table images */
+.stk-tableb img {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+}
+
+/* Style for table links */
+.link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  text-align: center;
+}
+
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.StockTOPIC h1 {
+  text-align: center;
+}
+
+
+
+.additemg {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.stk-lable-insert {
+  font-weight: bold;
+}
+
+.stk-input-insert {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.stk-btn-cancel {
+  background-color: #d82727;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.stk-btn-cancel:hover {
+  background-color: #b42838;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.stk-btn-add {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.stk-btn-add:hover {
+  background-color: #45a049;
+}
+
+
+.btn-organizations{
+  background-color: #438de0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 400px;
+  margin-top: 10px;
+  margin-left: 200px;
   
-  .create-organization .rectangle {
-    background-color: #d9d9d93d;
-    border-radius: 16px;
-    height: 1590px;
-    left: 2289px;
-    position: absolute;
-    top: 381px;
-    width: 1230px;
-  }
+}
+
+.background {
+  background-image: url('E:\Year 3\mixnetn\Mixnet_project\frontend\src\components\3522195.jpg'); 
+  background-size: cover;
+  background-position: center;
   
-  .create-organization .div-2 {
-    height: 952px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1374px;
-  }
+}
+
+.background1 {
+  background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+  background-size: cover;
+  background-position: center;
   
-  .create-organization .img {
-    height: 847px;
-    left: 796px;
-    position: absolute;
-    top: 47px;
-    width: 578px;
-  }
-  
-  .create-organization .rectangle-2 {
-    height: 55px;
-    left: 848px;
-    position: absolute;
-    top: 208px;
-    width: 490px;
-  }
-  
-  .create-organization .group {
-    height: 489px;
-    left: 840px;
-    position: absolute;
-    top: 221px;
-    width: 510px;
-  }
-  
-  .create-organization .overlap {
-    background-color: #d9d9d994;
-    border: 1px solid;
-    border-color: #00000047;
-    border-radius: 12px;
-    height: 55px;
-    left: 10px;
-    position: absolute;
-    top: 159px;
-    width: 490px;
-  }
-  
-  .create-organization .text-wrapper {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 17px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 14px;
-    white-space: nowrap;
-  }
-  
-  .create-organization .overlap-group {
-    background-color: #d9d9d994;
-    border: 1px solid;
-    border-color: #00000047;
-    border-radius: 12px;
-    height: 55px;
-    left: 10px;
-    position: absolute;
-    top: 248px;
-    width: 490px;
-  }
-  
-  .create-organization .text-wrapper-2 {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 19px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 14px;
-    white-space: nowrap;
-  }
-  
-  .create-organization .text-wrapper-3 {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 75px;
-    white-space: nowrap;
-  }
-  
-  .create-organization .overlap-2 {
-    height: 157px;
-    left: 0;
-    position: absolute;
-    top: 332px;
-    width: 500px;
-  }
-  
-  .create-organization .rectangle-3 {
-    background-color: #d9d9d994;
-    border: 1px solid;
-    border-color: #00000047;
-    border-radius: 12px;
-    height: 157px;
-    left: 10px;
-    position: absolute;
-    top: 0;
-    width: 490px;
-  }
-  
-  .create-organization .text-wrapper-4 {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 300;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 17px;
-    white-space: nowrap;
-    width: 144px;
-  }
-  
-  .create-organization .firstname {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 24px;
-    font-weight: 300;
-    left: 25px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 0;
-  }
-  
-  .create-organization .add-image {
-    height: 59px;
-    left: 135px;
-    position: absolute;
-    top: 58px;
-    width: 77px;
-  }
-  
-  .create-organization .overlap-group-wrapper {
-    height: 43px;
-    left: 318px;
-    position: absolute;
-    top: 66px;
-    width: 184px;
-  }
-  
-  .create-organization .choose-a-image-wrapper {
-    background-image: url(https://c.animaapp.com/tngBHUjs/img/rectangle-67.svg);
-    background-size: 100% 100%;
-    height: 43px;
-    position: relative;
-    width: 182px;
-  }
-  
-  .create-organization .choose-a-image {
-    color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    left: 10px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 7px;
-    white-space: nowrap;
-    width: 161px;
-  }
-  
-  .create-organization .mixnet-wrapper {
-    background-color: #5a8b88;
-    height: 952px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 759px;
-  }
-  
-  .create-organization .mixnet {
-    height: 201px;
-    left: 281px;
-    position: absolute;
-    top: 252px;
-    width: 198px;
-  }
-  
-  .create-organization .buttonsiu {
-    all: unset;
-    box-sizing: border-box;
-    height: 65px;
-    left: 860px;
-    position: absolute;
-    top: 757px;
-    width: 175px;
-  }
-  
-  .create-organization .div-wrapper {
-    background-color: #5a8b88;
-    border-radius: 19px;
-    height: 65px;
-    position: relative;
-    width: 173px;
-  }
-  
-  .create-organization .text-wrapper-5 {
-    color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    left: 50px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-shadow: 0px 4px 4px #00000040;
-    top: 20px;
-    width: 72px;
-  }
-  
-  .create-organization .overlap-wrapper {
-    height: 65px;
-    left: 1082px;
-    position: absolute;
-    top: 757px;
-    width: 249px;
-  }
-  
-  .create-organization .overlap-3 {
-    background-color: #5a8b88;
-    border-radius: 19px;
-    height: 65px;
-    position: relative;
-    width: 247px;
-  }
-  
-  .create-organization .text-wrapper-6 {
-    color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    left: 20px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-shadow: 0px 4px 4px #00000040;
-    top: 23px;
-    width: 227px;
-  }
-  
-  .create-organization .top {
-    height: 79px;
-    left: 796px;
-    position: absolute;
-    top: 106px;
-    width: 580px;
-  }
-  
-  .create-organization .line {
-    height: 2px;
-    left: 0;
-    position: absolute;
-    top: 76px;
-    width: 578px;
-  }
-  
-  .create-organization .employers {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 24px;
-    font-weight: 400;
-    left: 137px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 0;
-  }
-  
-  .create-organization .span {
-    font-weight: 700;
-  }
-  
-  .create-organization .text-wrapper-7 {
-    font-size: 16px;
-    font-weight: 300;
-  }
-  
-  .create-organization .text-wrapper-8 {
-    color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-size: 150px;
-    font-weight: 700;
-    left: 111px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 450px;
-    width: 572px;
-  }
-  
+}
+
+.titleo{
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

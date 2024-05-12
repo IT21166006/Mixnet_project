@@ -56,7 +56,7 @@ export default function CreateOffer() {
                 setCompanyName("");
                 setsdate("");
                 setItemimage(null);
-                navigate('/ManageEmployees');
+                navigate('/ManageEmployee');
             })
             .catch((err) => {
                 alert("Something went wrong");
@@ -65,11 +65,11 @@ export default function CreateOffer() {
     };
 
     return (
-        <div>
+        <div className="background">
             <br></br>
             <div className="container">
                 <div className="StockTOPIC">
-                    <h1>ADD Employee</h1>
+                    <h1>Add Employee</h1>
                 </div>
                 <div className="Stocktitle">
                     <div className="additemg">
@@ -77,10 +77,10 @@ export default function CreateOffer() {
 
                         <div className="row">
                     <div className="col-md-4">
-                        <label className="stk-lable-insert">Id :</label>
+                        <label className="stk-lable-insert">First Name :</label>
                     </div>
                     <div className="col-md-8">
-                        <input type="text" className="stk-input-insert" maxLength={5} required 
+                        <input type="text" className="stk-input-insert" maxLength={20} required 
                         onChange={(e)=>{
                             setFirstname(e.target.value);
                         }}></input>
@@ -140,7 +140,7 @@ export default function CreateOffer() {
                         <label className="stk-lable-insert">Enter mobile number :</label>
                     </div>
                     <div className="col-md-8">
-                        <input type="text"className="stk-input-insert" required
+                        <input type="number"className="stk-input-insert" required
                         onChange={(e)=>{
                             setNumber(e.target.value);
                         }}></input>
@@ -152,7 +152,7 @@ export default function CreateOffer() {
                         <label className="stk-lable-insert">Enter Email :</label>
                     </div>
                     <div className="col-md-8">
-                        <input type="text"className="stk-input-insert" required
+                        <input type="email"className="stk-input-insert" required
                         onChange={(e)=>{
                             setEmail(e.target.value);
                         }}></input>
@@ -226,15 +226,6 @@ export default function CreateOffer() {
                     
                 </div>
 
-
-
-
-
-                            
-
-
-
-                            
                             <Link to={'/ManageEmployees'}><button className="stk-btn-cancel">Cancel</button></Link>
                             <button type="submit" className="stk-btn-add">Submit</button>
                         </form>
